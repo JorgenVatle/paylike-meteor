@@ -1,8 +1,10 @@
-import { Tinytest } from 'meteor/tinytest';
+import { expect } from 'chai';
 import Paylike from "../dist/Paylike";
 
 const paylike = new Paylike(Meteor.settings.paylike.secret);
 
-Tinytest.add('Get app', (test) => {
-    test.isNotUndefined(paylike.me.identity);
+describe('Paylike', function() {
+    it('should grab the current app identity', function() {
+        expect(paylike.me.identity.id).to.not.be.undefined;
+    });
 });
