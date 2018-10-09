@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/JorgenVatle/paylike-meteor#readme",
   "devDependencies": {
+    "@types/meteor": "^1.4.22",
     "@types/node": "^10.11.5",
     "typescript": "^3.1.1"
   }
