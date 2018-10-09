@@ -31,3 +31,8 @@ Example output:
   }
 }
 ```
+
+## License
+This repository is licensed under the ISC license.
+
+Copyright (c) 2018, Jørgen Vatle.
