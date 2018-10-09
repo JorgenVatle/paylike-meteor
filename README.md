@@ -8,7 +8,7 @@ meteor add jorgenvatle:paylike
 
 ## Usage
 
-Import package:
+#### Import package
 ```js
 import Paylike from 'meteor/jorgenvatle:paylike';
 
