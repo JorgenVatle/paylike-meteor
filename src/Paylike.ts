@@ -96,10 +96,11 @@ export default class Paylike {
 
         /**
          * Fetches a single merchant
-         * @param id
+         *
+         * @param merchantId
          */
-        get: (id: string): PaylikeApi.merchants.merchant.get => {
-            return this.request('GET', `/merchants/${id}`);
-        }
+        get: (merchantId: string): PaylikeApi.merchants.merchant.get => {
+            return this.request('GET', `/merchants/${merchantId}`);
+        },
     };
 }
