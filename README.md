@@ -11,6 +11,7 @@ meteor add jorgenvatle:paylike
 ## Usage
 
 ### Import package
+The following examples will use the `paylike` constant defined below.
 ```js
 import Paylike from 'meteor/jorgenvatle:paylike';
 
@@ -18,6 +19,7 @@ const paylike = new Paylike('your-api-key');
 ```
 
 ### [Current app](https://github.com/paylike/api-docs#fetch-current-app)
+You can access your current app identity at any time through `paylike.me`.
 ```js
 console.log(paylike.me);
 ```
