@@ -16,6 +16,11 @@ declare module PaylikeApi {
         }
     }
 
+    /**
+     * Merchants
+     *
+     * @link https://github.com/paylike/api-docs#merchants
+     */
     module merchants {
         interface input {
             name?: string,
