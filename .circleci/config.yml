@@ -25,4 +25,4 @@ jobs:
         - 'node_modules'
 
     - run: npm run build
-    - run: npm run test -- --once
+    - run: npm run ci-tests
