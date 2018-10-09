@@ -2,7 +2,6 @@
   "name": "paylike-meteor",
   "private": true,
   "description": "Meteor HTTP wrapper for PayLike's REST API",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
