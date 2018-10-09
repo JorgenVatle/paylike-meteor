@@ -16,6 +16,5 @@ Package.onTest(function(api) {
     api.use('ecmascript');
     api.use('tinytest');
     api.use('jorgenvatle:paylike');
-    api.addAssets('tests/data/index.json', 'server');
     api.mainModule('tests/paylike.test.js');
 });
