@@ -35,6 +35,25 @@ Example output:
 }
 ```
 
+### [Merchants](https://github.com/paylike/api-docs#merchants)
+A merchant has a funding bank account and contains all transactions. The merchant can have several users and apps. All
+your users and apps have full access to the merchant.
+
+#### [Create a merchant](https://github.com/paylike/api-docs#create-a-merchant)
+```js
+const myMerchant = paylike.merchants.create({
+    name: 'Acme Commerce',
+    test: true,
+    currency: 'EUR',
+    email: 'john@example.com',
+    website: 'https://example.com',
+    descriptor: 'ACME',
+    company: {
+        country: 'RO'
+    }
+});
+```
+
 ## License
 This repository is licensed under the ISC license.
 
