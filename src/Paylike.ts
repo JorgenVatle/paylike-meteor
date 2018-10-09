@@ -70,4 +70,18 @@ export default class Paylike {
     public get me(): PaylikeApi.me.response {
         return this.request('GET', '/me');
     }
+
+    /**
+     * Merchant Resource
+     */
+    public merchants = {
+        /**
+         * Creates a new merchant
+         *
+         * @param merchant
+         */
+        create: (merchant: PaylikeApi.merchants.input) => {
+            return this.request('POST', '/merchants', merchant);
+        },
+    }
 }
