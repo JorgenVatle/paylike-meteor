@@ -64,5 +64,14 @@ declare module PaylikeApi {
         }
     }
 
+    /**
+     * Single merchant
+     *
+     * @link https://github.com/paylike/api-docs#merchants
+     */
+    module merchant {
+        interface get extends merchants.create.response {}
+    }
+
 
 }
