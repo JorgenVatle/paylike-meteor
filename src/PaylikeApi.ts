@@ -1,3 +1,5 @@
+export type CurrencyCode = 'USD' | 'EUR' | 'GBP' | 'AUD' | 'CAD' | string
+
 declare module PaylikeApi {
 
     /**
@@ -11,6 +13,25 @@ declare module PaylikeApi {
                 id: string,
                 name?: string,
                 created?: string,
+            }
+        }
+    }
+
+    module merchants {
+        interface input {
+            name?: string,
+            test?: boolean,
+
+            currency: CurrencyCode
+            email: string,
+            website: string,
+            descriptor: string,
+            company: {
+                country: string,
+                number?: string,
+            },
+            bank?: {
+                iban?: string,
             }
         }
     }
