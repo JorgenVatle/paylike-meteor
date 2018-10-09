@@ -35,6 +35,16 @@ export default class Paylike {
     }
 
     /**
+     * Build new exception.
+     *
+     * @param message
+     * @param metadata
+     */
+    protected exception(message: string, metadata: any) {
+        return new Meteor.Error('Paylike', message, metadata);
+    }
+
+    /**
      * Send a request to the API.
      *
      * @param method
@@ -43,13 +53,17 @@ export default class Paylike {
      * @returns {object}
      */
     protected request(method: string, path: string, data?: any): any {
-        return HTTP.call(method, this.buildUrl(path), {
-            data,
-            headers: {
-                Authorization: `:${this.api.key}`,
-                Accept: 'application/json'
-            },
-        }).data;
+        try {
+            return HTTP.call(method, this.buildUrl(path), {
+                data,
+                headers: {
+                    Authorization: `:${this.api.key}`,
+                    Accept: 'application/json'
+                },
+            }).data;
+        } catch (exception) {
+            throw this.exception(exception.reason, exception);
+        }
     }
 
     /**
