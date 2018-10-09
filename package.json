@@ -5,7 +5,7 @@
   "scripts": {
     "start": "start npm run build -- --watch & npm test",
     "test": "meteor test-packages ./ --settings settings.json --driver-package meteortesting:mocha",
-    "ci-test": "meteor test-packges ./ --once --driver-package meteortesting:mocha",
+    "ci-tests": "meteor test-packges ./ --once --driver-package meteortesting:mocha",
     "build": "tsc"
   },
   "repository": {
