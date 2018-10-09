@@ -13,11 +13,13 @@ export default class Paylike {
     /**
      * Paylike constructor
      *
-     * @param apiKey
+     * @param key
      */
-    public constructor(apiKey: string) {
-        this.api.key = apiKey;
-        this.api.url = 'https://api.paylike.io';
+    public constructor(key: string) {
+        this.api = {
+            key,
+            url: 'https://api.paylike.io'
+        };
     }
 
     /**
