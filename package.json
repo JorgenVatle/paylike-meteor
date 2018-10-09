@@ -3,7 +3,8 @@
   "private": true,
   "description": "Meteor HTTP wrapper for PayLike's REST API",
   "scripts": {
-    "test": "meteor test-packages ./ --settings settings.json"
+    "test": "meteor test-packages ./ --settings settings.json",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
