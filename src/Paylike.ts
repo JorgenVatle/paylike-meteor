@@ -26,9 +26,11 @@ export default class Paylike {
      * @param path
      */
     protected buildUrl(path: string): string {
-        return this.api.url + path.replace(/^\/+/, '');
-    }
+        const base = (this.api.url + '/').replace(/\/+$/, '/');
+        const endpoint = path.replace(/^\/+/, '');
 
+        return base + endpoint;
+    }
 
     /**
      * Send a request to the API.
