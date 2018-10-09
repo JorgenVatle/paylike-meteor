@@ -59,6 +59,8 @@ declare module PaylikeApi {
                 email?: string,
                 descriptor?: string,
             }
+
+            type response = void;
         }
     }
 
