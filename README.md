@@ -1,4 +1,5 @@
 # Paylike Meteor
+![CircleCI branch](https://img.shields.io/circleci/project/github/JorgenVatle/paylike-meteor/master.svg)
 [![Atmosphere](https://img.shields.io/badge/atmosphere-jorgenvatle%3Apaylike-blue.svg)](https://atmospherejs.com/jorgenvatle/paylike)
 
 A simple Meteor wrapper for [Paylike](https://paylike.io/)'s API enabling synchronous consumption of their payments API.
