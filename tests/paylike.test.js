@@ -1,5 +1,5 @@
 import { Tinytest } from 'meteor/tinytest';
-import Paylike from "../src/Paylike";
+import Paylike from "../dist/Paylike";
 
 const paylike = new Paylike(Meteor.settings.paylike.secret);
 
