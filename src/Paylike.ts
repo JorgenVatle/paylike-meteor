@@ -92,6 +92,14 @@ export default class Paylike {
          */
         update: (merchant: PaylikeApi.merchants.update.input): PaylikeApi.merchants.update.response => {
             return this.request('PUT', '/merchants', merchant);
+        },
+
+        /**
+         * Fetches a single merchant
+         * @param id
+         */
+        get: (id: string): PaylikeApi.merchants.merchant.get => {
+            return this.request('GET', `/merchants/${id}`);
         }
-    }
+    };
 }
