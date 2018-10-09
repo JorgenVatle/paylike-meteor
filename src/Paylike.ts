@@ -81,8 +81,17 @@ export default class Paylike {
          *
          * @param merchant
          */
-        create: (merchant: PaylikeApi.merchants.create.input) => {
+        create: (merchant: PaylikeApi.merchants.create.input): PaylikeApi.merchants.create.response => {
             return this.request('POST', '/merchants', merchant);
         },
+
+        /**
+         * Updates an existing merchant
+         *
+         * @param merchant
+         */
+        update: (merchant: PaylikeApi.merchants.update.input): PaylikeApi.merchants.update.response => {
+            return this.request('PUT', '/merchants', merchant);
+        }
     }
 }
