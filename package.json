@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/JorgenVatle/paylike-meteor#readme",
   "devDependencies": {
+    "@types/chai": "^4.1.6",
     "@types/meteor": "^1.4.22",
     "@types/node": "^10.11.5",
     "chai": "^4.2.0",
