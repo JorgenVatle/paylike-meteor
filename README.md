@@ -36,8 +36,9 @@ Example output:
 ```
 
 ### [Merchants](https://github.com/paylike/api-docs#merchants)
-A merchant has a funding bank account and contains all transactions. The merchant can have several users and apps. All
-your users and apps have full access to the merchant.
+The Merchant object is responsible for a funding bank account as well as all of it's associated transactions. This is
+essentially a shop. It is important to note that all users and apps have complete access to their merchant. This
+includes inviting and removing users.
 
 #### [Create a merchant](https://github.com/paylike/api-docs#create-a-merchant)
 ```js
