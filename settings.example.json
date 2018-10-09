@@ -1,5 +1,7 @@
 {
   "paylike": {
-    "key": "-- Your API Key Here --"
+    "id": "-- Account ID --",
+    "public": "-- Account Public Key --",
+    "private": "-- App Private Key --"
   }
 }
