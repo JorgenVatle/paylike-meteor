@@ -7,7 +7,7 @@ declare module PaylikeApi {
      * @link https://api.paylike.io/me
      */
     module me {
-        interface response {
+        interface get {
             identity: {
                 id: string,
                 name?: string,
@@ -22,27 +22,38 @@ declare module PaylikeApi {
      * @link https://github.com/paylike/api-docs#merchants
      */
     module merchants {
-        interface input {
-            name?: string,
-            test?: boolean,
 
-            currency: CurrencyCode
-            email: string,
-            website: string,
-            descriptor: string,
-            company: {
-                country: string,
-                number?: string,
-            },
-            bank?: {
-                iban?: string,
+        /**
+         * Create a merchant
+         */
+        module create {
+            interface input {
+                name?: string,
+                test?: boolean,
+
+                currency: CurrencyCode
+                email: string,
+                website: string,
+                descriptor: string,
+                company: {
+                    country: string,
+                    number?: string,
+                },
+                bank?: {
+                    iban?: string,
+                }
             }
         }
 
-        interface update {
-            name?: string,
-            email?: string,
-            descriptor?: string,
+        /**
+         * Update a merchant
+         */
+        module update {
+            interface input {
+                name?: string,
+                email?: string,
+                descriptor?: string,
+            }
         }
     }
 

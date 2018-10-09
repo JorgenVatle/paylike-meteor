@@ -67,7 +67,7 @@ export default class Paylike {
     /**
      * Fetches the current app
      */
-    public get me(): PaylikeApi.me.response {
+    public get me(): PaylikeApi.me.get {
         return this.request('GET', '/me');
     }
 
@@ -75,12 +75,13 @@ export default class Paylike {
      * Merchant Resource
      */
     public merchants = {
+
         /**
          * Creates a new merchant
          *
          * @param merchant
          */
-        create: (merchant: PaylikeApi.merchants.input) => {
+        create: (merchant: PaylikeApi.merchants.create.input) => {
             return this.request('POST', '/merchants', merchant);
         },
     }
