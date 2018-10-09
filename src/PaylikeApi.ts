@@ -1,4 +1,10 @@
 declare module PaylikeApi {
+
+    /**
+     * Current app
+     *
+     * @link https://api.paylike.io/me
+     */
     module me {
         interface response {
             identity: {
@@ -7,4 +13,6 @@ declare module PaylikeApi {
             }
         }
     }
+
+
 }
