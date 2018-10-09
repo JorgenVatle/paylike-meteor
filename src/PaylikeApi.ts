@@ -38,6 +38,12 @@ declare module PaylikeApi {
                 iban?: string,
             }
         }
+
+        interface update {
+            name?: string,
+            email?: string,
+            descriptor?: string,
+        }
     }
 
 
