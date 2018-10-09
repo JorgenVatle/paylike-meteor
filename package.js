@@ -14,7 +14,7 @@ Package.onUse(function(api) {
 
 Package.onTest(function(api) {
     api.use('ecmascript');
-    api.use('tinytest');
+    api.use('meteortesting:mocha');
     api.use('jorgenvatle:paylike');
     api.mainModule('tests/paylike.test.js');
 });
