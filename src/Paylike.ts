@@ -41,6 +41,7 @@ export default class Paylike {
      * @param metadata
      */
     protected exception(message: string, metadata: any) {
+        console.error({ message, metadata });
         return new Meteor.Error('Paylike', message, metadata);
     }
 
@@ -62,7 +63,7 @@ export default class Paylike {
                 },
             }).data;
         } catch (exception) {
-            throw this.exception(exception.reason, exception);
+            throw this.exception(exception.message, exception);
         }
     }
 
