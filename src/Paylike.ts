@@ -49,4 +49,11 @@ export default class Paylike {
             },
         }).data;
     }
+
+    /**
+     * Fetches the current app
+     */
+    get me(): PaylikeApi.me.response {
+        return this.request('GET', '/me');
+    }
 }
