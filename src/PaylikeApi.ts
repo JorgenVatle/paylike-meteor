@@ -43,6 +43,11 @@ declare module PaylikeApi {
                     iban?: string,
                 }
             }
+
+            interface response extends input {
+                id: string,
+                key: string,
+            }
         }
 
         /**
