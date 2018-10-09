@@ -2,6 +2,6 @@
   "paylike": {
     "id": "-- Account ID --",
     "public": "-- Account Public Key --",
-    "private": "-- App Private Key --"
+    "secret": "-- App Private Key --"
   }
 }
