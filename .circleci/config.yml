@@ -24,5 +24,6 @@ jobs:
         - '~/.npm'
         - 'node_modules'
 
+    - run: echo $METEOR_SETTINGS > settings.json
     - run: npm run build
-    - run: npm run ci-tests
+    - run: npm run test -- --once
