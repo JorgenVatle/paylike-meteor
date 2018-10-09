@@ -1,0 +1,28 @@
+version: 2
+jobs:
+  build:
+    docker:
+    - image: circleci/node:10.0
+
+    working_directory: ~/repo
+
+    steps:
+    - checkout
+
+    - restore_cache:
+        name: Restore node_modules
+        key: npm-cache-{{ checksum "package.json" }}
+
+    ## Install and cache dependencies
+    - run: meteor || curl https://install.meteor.com/ | /bin/sh
+    - run: meteor npm install
+
+    - save_cache:
+        name: Save node_modules
+        key: npm-cache-{{ checksum "package.json" }}
+        paths:
+        - '~/.npm'
+        - 'node_modules'
+
+    - run: npm run build
+    - run: npm run test -- --once
