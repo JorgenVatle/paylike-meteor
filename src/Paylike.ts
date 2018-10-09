@@ -56,10 +56,8 @@ export default class Paylike {
         try {
             return HTTP.call(method, this.buildUrl(path), {
                 data,
-                headers: {
-                    Authorization: `:${this.api.key}`,
-                    Accept: 'application/json'
-                },
+                auth: `:${this.api.key}`,
+                headers: { Accept: 'application/json' },
             }).data;
         } catch (exception) {
             throw this.exception(exception.message, exception);
