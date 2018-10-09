@@ -43,7 +43,10 @@ export default class Paylike {
     protected request(method: string, path: string, data?: any): any {
         return HTTP.call(method, this.buildUrl(path), {
             data,
-            headers: { Authorization: `:${this.api.key}` },
+            headers: {
+                Authorization: `:${this.api.key}`,
+                Accept: 'application/json'
+            },
         }).data;
     }
 }
