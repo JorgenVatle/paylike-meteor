@@ -1,6 +1,6 @@
 {
   "name": "paylike-meteor",
-  "version": "1.0.0",
+  "private": true,
   "description": "Meteor HTTP wrapper for PayLike's REST API",
   "main": "index.js",
   "scripts": {
