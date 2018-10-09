@@ -9,7 +9,8 @@ declare module PaylikeApi {
         interface response {
             identity: {
                 id: string,
-                name: string,
+                name?: string,
+                created?: string,
             }
         }
     }
