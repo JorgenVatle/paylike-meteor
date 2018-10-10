@@ -19,9 +19,14 @@ export default abstract class PaylikeCore {
      * Paylike core constructor.
      *
      * @param service
+     * @param data
      */
-    protected constructor(service: PaylikeService) {
+    protected constructor(service: PaylikeService, data?: any) {
         this.service = service;
+
+        if (data) {
+            this.merge(data)
+        }
     }
 
     /**
