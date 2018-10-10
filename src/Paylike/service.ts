@@ -68,7 +68,7 @@ export default class PaylikeService {
     /**
      * Fetches the current app
      */
-    public get me(): PaylikeApi.me.get {
+    public get me(): PaylikeApi.apps.me.response {
         return this.request('GET', '/me');
     }
 
