@@ -37,6 +37,15 @@ class PaylikeMerchant extends PaylikeDataCore {
         return `/merchants/${this.entry.id}`;
     }
 
+    /**
+     * Build a merchant path to the given location.
+     *
+     * @param to
+     */
+    public buildPath(to: string) {
+        return this.path + '/' + to.replace(/^\/+/, '');
+    }
+
 }
 
 export default PaylikeMerchant;
