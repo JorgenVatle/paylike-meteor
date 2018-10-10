@@ -1,21 +1,7 @@
-import PaylikeService from "../../dist/Paylike/service";
 import PaylikeMerchant from "./merchant";
+import PaylikeCore from "./core";
 
-export default class PaylikeMerchants {
-
-    /**
-     * Paylike service.
-     */
-    protected service: PaylikeService;
-
-    /**
-     * Paylike merchants constructor.
-     *
-     * @param service
-     */
-    public constructor(service: PaylikeService) {
-        this.service = service;
-    }
+export default class PaylikeMerchants extends PaylikeCore {
 
     /**
      * Fetch a merchant.
@@ -23,8 +9,8 @@ export default class PaylikeMerchants {
      * @param merchantId
      */
     public get(merchantId: string) {
-        return new PaylikeMerchant(
-            this.service,
+        return this.initialize(
+            PaylikeMerchant,
             this.service.request('GET', `/merchants/${merchantId}`),
         )
     }
@@ -34,9 +20,9 @@ export default class PaylikeMerchants {
      *
      * @param merchant
      */
-    public create(merchant: PaylikeApi.merchants.create.input): PaylikeApi.merchants.create.response {
-        return new PaylikeMerchant(
-            this.service,
+    public create(merchant: PaylikeApi.merchants.create.input): PaylikeMerchant {
+        return this.initialize(
+            PaylikeMerchant,
             this.service.request('POST', '/merchants', merchant)
         );
     }
