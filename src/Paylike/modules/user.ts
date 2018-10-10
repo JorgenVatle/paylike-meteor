@@ -25,6 +25,13 @@ class PaylikeUser extends PaylikeDataCore {
         this.merchant = merchant;
     }
 
+    /**
+     * User path URI
+     */
+    public get path() {
+        return this.merchant.buildPath(`/users/${this.id}`);
+    }
+
 }
 
 export default PaylikeUser;
