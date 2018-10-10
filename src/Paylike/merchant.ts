@@ -19,10 +19,8 @@ class PaylikeMerchant extends PaylikeDataCore {
      * @param params
      */
     public update(params: PaylikeApi.merchants.update.input): PaylikeMerchant {
-        return this.initialize(
-            PaylikeMerchant,
-            this.request('PUT', `/merchants/${this.entry.id}`, params).merchant
-        );
+        this.request('PUT', `/merchants/${this.entry.id}`, params);
+        return this.service.merchants.get(this.id);
     }
 
 }
