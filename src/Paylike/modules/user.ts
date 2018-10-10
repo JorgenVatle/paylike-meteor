@@ -39,6 +39,12 @@ class PaylikeUser extends PaylikeDataCore {
         return this.request('DELETE', this.path);
     }
 
+    /**
+     * Proxy methods for revoke()
+     */
+    public remove = this.revoke;
+    public delete = this.revoke;
+
 }
 
 export default PaylikeUser;
