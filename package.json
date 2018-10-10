@@ -1,7 +1,8 @@
 {
   "name": "paylike-meteor",
-  "private": true,
+  "version": "1.0.0",
   "description": "Meteor HTTP wrapper for PayLike's REST API",
+  "private": true,
   "scripts": {
     "start": "start npm run build -- --watch & npm test",
     "test": "meteor test-packages ./ --settings settings.json --driver-package meteortesting:mocha",

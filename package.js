@@ -1,8 +1,10 @@
+var packageJson = require('./package.json');
+
 Package.describe({
     name: 'jorgenvatle:paylike',
-    version: '1.0.0',
-    summary: 'Meteor HTTP wrapper for PayLike\'s REST API',
-    git: 'https://github.com/JorgenVatle/paylike-meteor.git',
+    version: packageJson.version,
+    summary: packageJson.description,
+    git: packageJson.repository.url.replace('git+', ''),
     documentation: 'README.md'
 });
 
