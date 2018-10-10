@@ -55,6 +55,17 @@ const myMerchant = paylike.merchants.create({
 });
 ```
 
+#### [Update a merchant](https://github.com/paylike/api-docs#update-a-merchant)
+```js
+const myMerchant = paylike.merchants.get('some-merchant-id');
+
+myMerchant.update({
+    name: 'Acme Commerce 2',
+    email: 'jane@example.com',
+    descriptor: 'ACME2',
+});
+```
+
 ## License
 This repository is licensed under the ISC license.
 
