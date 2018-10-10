@@ -8,8 +8,8 @@ export default class PaylikeMerchants extends PaylikeCore {
      *
      * @param merchantId
      */
-    public get(merchantId: string) {
-        return this.initialize(
+    public get(merchantId: string): PaylikeMerchant {
+        return <PaylikeMerchant>this.initialize(
             PaylikeMerchant,
             this.service.request('GET', `/merchants/${merchantId}`).merchant,
         )
@@ -21,7 +21,7 @@ export default class PaylikeMerchants extends PaylikeCore {
      * @param merchant
      */
     public create(merchant: PaylikeApi.merchants.create.input): PaylikeMerchant {
-        return this.initialize(
+        return <PaylikeMerchant>this.initialize(
             PaylikeMerchant,
             this.service.request('POST', '/merchants', merchant).merchant
         );
