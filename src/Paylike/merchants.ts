@@ -4,12 +4,12 @@ import PaylikeMerchant from "./merchant";
 export default class PaylikeMerchants {
 
     /**
-     * Paylike service
+     * Paylike service.
      */
     protected service: PaylikeService;
 
     /**
-     * Paylike merchants constructor
+     * Paylike merchants constructor.
      *
      * @param service
      */
@@ -17,6 +17,11 @@ export default class PaylikeMerchants {
         this.service = service;
     }
 
+    /**
+     * Fetch a merchant.
+     *
+     * @param merchantId
+     */
     get(merchantId: string) {
         return new PaylikeMerchant(
             this.service,
