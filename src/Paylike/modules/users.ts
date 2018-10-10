@@ -1,5 +1,6 @@
 import PaylikeMerchant from "./merchant";
 import PaylikeCore from "../core";
+import PaylikeUser from "./user";
 
 export default class PaylikeUsers extends PaylikeCore {
 
@@ -23,8 +24,10 @@ export default class PaylikeUsers extends PaylikeCore {
      *
      * @param data
      */
-    invite(data: PaylikeApi.users.invite.input) {
-        this.request('POST', this.merchant.buildPath('/users'), data);
+    invite(data: PaylikeApi.users.invite.input): PaylikeUser {
+        return new PaylikeUser(
+            this.merchant,
+            this.request('POST', this.merchant.buildPath('/users'), data)
+        )
     }
-
 }
