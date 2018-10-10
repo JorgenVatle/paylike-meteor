@@ -1,4 +1,4 @@
-import PaylikeService from "./PaylikeService";
+import PaylikeService from "./service";
 
 interface MerchantData extends PaylikeApi.merchants.create.response {}
 

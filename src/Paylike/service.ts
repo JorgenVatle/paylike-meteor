@@ -1,5 +1,5 @@
 import { HTTP } from 'meteor/http';
-import PaylikeMerchants from "./PaylikeMerchants";
+import PaylikeMerchants from "./merchants";
 
 export default class PaylikeService {
 

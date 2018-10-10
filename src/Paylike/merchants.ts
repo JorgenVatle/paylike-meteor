@@ -1,5 +1,5 @@
 import PaylikeService from "../../dist/Paylike/service";
-import PaylikeMerchant from "./PaylikeMerchant";
+import PaylikeMerchant from "./merchant";
 
 export default class PaylikeMerchants {
 
