@@ -9,7 +9,7 @@ export default abstract class PaylikeDataCore extends PaylikeCore {
      * @param service
      * @param data
      */
-    protected constructor(service: PaylikeService, data: any) {
+    public constructor(service: PaylikeService, data: any) {
         super(service);
         this.merge(data);
     }
