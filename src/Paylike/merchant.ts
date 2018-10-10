@@ -26,7 +26,7 @@ class PaylikeMerchant {
      * @param service
      * @param merchant
      */
-    constructor(service: PaylikeService, merchant: MerchantData) {
+    public constructor(service: PaylikeService, merchant: MerchantData) {
         this.service = service;
         this.entry = merchant;
         Object.assign(this, merchant);
