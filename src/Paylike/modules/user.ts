@@ -1,6 +1,13 @@
 import PaylikeMerchant from "./merchant";
+import PaylikeDataCore from "../data-core";
 
-export default class User {
+interface UserData extends PaylikeApi.users.user {}
+
+interface User extends UserData {
+    entry: UserData;
+}
+
+class User extends PaylikeDataCore {
 
     /**
      * Merchant this user belongs to.
@@ -11,9 +18,13 @@ export default class User {
      * Paylike user constructor.
      *
      * @param merchant
+     * @param user
      */
-    constructor(merchant: PaylikeMerchant) {
+    constructor(merchant: PaylikeMerchant, user: UserData) {
+        super(merchant.service, user);
         this.merchant = merchant;
     }
 
 }
+
+export default User;
