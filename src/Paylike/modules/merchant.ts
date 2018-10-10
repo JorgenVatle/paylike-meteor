@@ -25,9 +25,16 @@ class PaylikeMerchant extends PaylikeDataCore {
      * @param params
      */
     public update(params: PaylikeApi.merchants.update.input): PaylikeMerchant {
-        this.request('PUT', `/merchants/${this.entry.id}`, params);
+        this.request('PUT', this.path, params);
         this.merge(this.service.merchants.get(this.id));
         return this;
+    }
+
+    /**
+     * Merchant path URI
+     */
+    public get path() {
+        return `/merchants/${this.entry.id}`;
     }
 
 }
