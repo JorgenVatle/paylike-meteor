@@ -1,6 +1,6 @@
 import PaylikeDataCore from "./data-core";
 
-interface MerchantData extends PaylikeApi.merchants.create.response {}
+interface MerchantData extends PaylikeApi.merchants.merchant {}
 
 interface PaylikeMerchant extends MerchantData {
     entry: MerchantData;
