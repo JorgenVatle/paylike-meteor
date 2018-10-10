@@ -89,4 +89,29 @@ declare module PaylikeApi {
             interface response { identity: identity }
         }
     }
+
+    /**
+     * Users
+     *
+     * @link https://github.com/paylike/api-docs#merchants-users
+     */
+    module users {
+        interface user {
+            id: string,
+            email: string,
+        }
+
+        /**
+         * Invite a user
+         */
+        module invite {
+            interface input {
+                email: string,
+            }
+
+            interface response {
+                user: user,
+            }
+        }
+    }
 }
