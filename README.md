@@ -73,6 +73,15 @@ myMerchant.update({
 console.log(myMerchant.name) // "Acme Commerce 2"
 ```
 
+### [Merchant's Users](https://github.com/paylike/api-docs#merchants-users)
+A merchant can have several users attached. These have complete access to their respective merchant and can add and
+remove additional apps and users.
+
+#### [Invite a user](https://github.com/paylike/api-docs#invite-user-to-a-merchant)
+```js
+const acmeUser = myMerchant.users.invite({ email: 'steven@example.com' });
+```
+
 ## License
 This repository is licensed under the ISC license.
 
