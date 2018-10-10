@@ -66,31 +66,21 @@ declare module PaylikeApi {
          * Create an app
          */
         module create {
-            interface input {
-                name?: string,
-            }
-
-            interface response {
-                app: {
-                    id: String,
-                    key: String,
-                    name?: String,
-                    created?: String,
-                }
-            }
+            interface input { name?: string }
+            interface app extends me.identity { key?: String}
+            interface response { app: app }
         }
 
         /**
          * Fetch the current app
          */
         module me {
-            interface response {
-                identity: {
-                    id: string,
-                    name?: string,
-                    created?: string,
-                }
+            interface identity {
+                id: string,
+                name?: string,
+                created?: string,
             }
+            interface response { identity: identity }
         }
     }
 }
