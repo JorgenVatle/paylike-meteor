@@ -75,7 +75,7 @@ export default class PaylikeService {
     /**
      * Paylike merchants class.
      */
-    public get merchants() {
+    public get merchants(): PaylikeMerchants {
         return new PaylikeMerchants(this);
     }
 }
