@@ -1,7 +1,5 @@
 {
   "name": "paylike-meteor",
-  "version": "1.0.0",
-  "description": "Meteor HTTP wrapper for PayLike's REST API",
   "private": true,
   "scripts": {
     "start": "start npm run build -- --watch & npm test",
@@ -12,11 +10,6 @@
     "type": "git",
     "url": "git+https://github.com/JorgenVatle/paylike-meteor.git"
   },
-  "keywords": [
-    "Meteor",
-    "Paylike",
-    "HTTP"
-  ],
   "author": "Jørgen Vatle <Jorgen@WcAServices.net> (https://github.com/JorgenVatle)",
   "license": "ISC",
   "bugs": {
