@@ -1,4 +1,7 @@
 import PaylikeService from "./service";
+import PaylikeMerchant from "./merchant";
+
+type PaylikeDataModule = typeof PaylikeMerchant;
 
 export default abstract class PaylikeCore {
 
@@ -42,4 +45,13 @@ export default abstract class PaylikeCore {
         return this.service.request(method, path, data);
     }
 
+    /**
+     * Initialize a new Paylike module with data.
+     *
+     * @param paylikeModule
+     * @param data
+     */
+    protected initialize(paylikeModule: PaylikeDataModule, data: any) {
+        return new paylikeModule(this.service, data);
+    }
 }
