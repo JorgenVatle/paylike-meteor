@@ -53,6 +53,8 @@ const myMerchant = paylike.merchants.create({
         country: 'RO'
     }
 });
+
+console.log(myMerchant.name) // "Acme Commerce"
 ```
 
 #### [Fetch a merchant](https://github.com/paylike/api-docs#fetch-a-merchant)
@@ -67,6 +69,8 @@ const myUpdatedMerchant = myMerchant.update({
     email: 'jane@example.com',
     descriptor: 'ACME2',
 });
+
+console.log(myUpdatedMerchant.name) // "Acme Commerce 2"
 ```
 
 ## License
