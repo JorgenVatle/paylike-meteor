@@ -23,4 +23,16 @@ export default class PaylikeMerchants {
             this.service.request('GET', `/merchants/${merchantId}`),
         )
     }
+
+    /**
+     * Create a merchant.
+     *
+     * @param merchant
+     */
+    create(merchant: PaylikeApi.merchants.create.input): PaylikeApi.merchants.create.response {
+        return new PaylikeMerchant(
+            this.service,
+            this.service.request('POST', '/merchants', merchant)
+        );
+    }
 }
