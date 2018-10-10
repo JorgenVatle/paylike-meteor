@@ -5,6 +5,7 @@ export default class PaylikeApps extends PaylikeCore {
 
     /**
      * Create a new app.
+     *
      * @param app
      */
     create(app: PaylikeApi.apps.create.input): PaylikeApp {
@@ -12,6 +13,16 @@ export default class PaylikeApps extends PaylikeCore {
             PaylikeApp,
             this.request('POST', '/apps', app).app
         )
+    }
+
+    /**
+     * Fetch current app
+     */
+    get me(): PaylikeApp {
+        return <PaylikeApp>this.initialize(
+            PaylikeApp,
+            this.request('GET', '/me').identity
+        );
     }
 
 }
