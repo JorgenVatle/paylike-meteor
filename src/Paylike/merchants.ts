@@ -22,7 +22,7 @@ export default class PaylikeMerchants {
      *
      * @param merchantId
      */
-    get(merchantId: string) {
+    public get(merchantId: string) {
         return new PaylikeMerchant(
             this.service,
             this.service.request('GET', `/merchants/${merchantId}`),
@@ -34,7 +34,7 @@ export default class PaylikeMerchants {
      *
      * @param merchant
      */
-    create(merchant: PaylikeApi.merchants.create.input): PaylikeApi.merchants.create.response {
+    public create(merchant: PaylikeApi.merchants.create.input): PaylikeApi.merchants.create.response {
         return new PaylikeMerchant(
             this.service,
             this.service.request('POST', '/merchants', merchant)
