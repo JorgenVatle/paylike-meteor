@@ -1,17 +1,23 @@
-var packageJson = require('./package.json');
-
-Package.describe({
+var Package = Package || {
+    onUse: function() {},
+    onTest: function() {},
+    describe: function() {},
+};
+var module = module || {};
+var details = {
     name: 'jorgenvatle:paylike',
-    version: packageJson.version,
-    summary: packageJson.description,
-    git: packageJson.repository.url.replace('git+', ''),
+    version: '1.0.0',
+    summary: 'Meteor HTTP wrapper for PayLike\'s REST API',
+    git: 'https://github.com/JorgenVatle/paylike-meteor.git',
     documentation: 'README.md'
-});
+};
+
+Package.describe(details);
 
 Package.onUse(function(api) {
     api.versionsFrom('1.2');
     api.use('ecmascript');
-    api.addAssets('package.json', 'server');
+    api.addAssets('package.js', 'server');
     api.mainModule('dist/Paylike/index.js');
 });
 
@@ -22,3 +28,7 @@ Package.onTest(function(api) {
     api.addAssets('tests/data.json', 'server');
     api.mainModule('tests/paylike.test.js');
 });
+
+module.exports = {
+    details: details,
+};
