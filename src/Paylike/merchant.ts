@@ -32,6 +32,18 @@ class PaylikeMerchant {
         Object.assign(this, merchant);
     }
 
+    /**
+     * Update the current merchant.
+     *
+     * @param params
+     */
+    public update(params: PaylikeApi.merchants.update.input): PaylikeMerchant {
+        return new PaylikeMerchant(
+            this.service,
+            this.service.request('PUT', `/merchants${this.entry.id}`, params)
+        );
+    }
+
 }
 
 export default PaylikeMerchant;
