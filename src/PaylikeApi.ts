@@ -70,4 +70,29 @@ declare module PaylikeApi {
             interface get extends merchants.create.response {}
         }
     }
+
+    /**
+     * Apps
+     *
+     * @link https://github.com/paylike/api-docs#apps
+     */
+    module apps {
+        /**
+         * Create an app
+         */
+        module create {
+            interface input {
+                name?: string,
+            }
+
+            interface response {
+                app: {
+                    id: String,
+                    key: String,
+                    name?: String,
+                    created?: String,
+                }
+            }
+        }
+    }
 }
