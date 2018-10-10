@@ -64,13 +64,13 @@ const myMerchant = paylike.merchants.get('some-merchant-id');
 
 #### [Update a merchant](https://github.com/paylike/api-docs#update-a-merchant)
 ```js
-const myUpdatedMerchant = myMerchant.update({
+myMerchant.update({
     name: 'Acme Commerce 2',
     email: 'jane@example.com',
     descriptor: 'ACME2',
 });
 
-console.log(myUpdatedMerchant.name) // "Acme Commerce 2"
+console.log(myMerchant.name) // "Acme Commerce 2"
 ```
 
 ## License
