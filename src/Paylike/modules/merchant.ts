@@ -34,7 +34,7 @@ class PaylikeMerchant extends PaylikeDataCore {
     /**
      * Merchant path URI
      */
-    public get path() {
+    public get path(): string {
         return `/merchants/${this.entry.id}`;
     }
 
@@ -43,14 +43,14 @@ class PaylikeMerchant extends PaylikeDataCore {
      *
      * @param to
      */
-    public buildPath(to: string) {
+    public buildPath(to: string): string {
         return this.path + '/' + to.replace(/^\/+/, '');
     }
 
     /**
      * Merchant users.
      */
-    public get users() {
+    public get users(): PaylikeUsers {
         return new PaylikeUsers(this);
     }
 
