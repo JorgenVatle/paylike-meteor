@@ -1,3 +1,3 @@
-import PaylikeService from "../../dist/Paylike/service";
+import PaylikeService from "./service";
 
 export default PaylikeService;
