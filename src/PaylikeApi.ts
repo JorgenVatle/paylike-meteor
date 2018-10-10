@@ -113,5 +113,12 @@ declare module PaylikeApi {
                 user: user,
             }
         }
+
+        /**
+         * Revoke a user
+         */
+        module revoke {
+            type response = void;
+        }
     }
 }
