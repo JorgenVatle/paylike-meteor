@@ -1,7 +1,7 @@
 import { HTTP } from 'meteor/http';
 import PaylikeMerchants from "./merchants";
 
-const PackageJson = JSON.parse(Assets.getText('../package.json'));
+const PackageJson = JSON.parse(Assets.getText('package.json'));
 
 export default class PaylikeService {
 
