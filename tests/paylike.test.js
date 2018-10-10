@@ -24,4 +24,12 @@ describe('Paylike', function() {
         const state2 = merchant.update({ name: 'test-state2' });
         assert.equal(state2.name, 'test-state2');
     });
+
+    it('should add a user to a merchant', function() {
+        const merchant = paylike.merchants.get(testData.merchant.users);
+
+        const user = merchant.users.invite({ email: 'steven@example.com' });
+
+        expect(user.id).to.not.be.undefined;
+    });
 });
