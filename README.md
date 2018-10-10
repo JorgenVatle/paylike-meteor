@@ -80,7 +80,7 @@ remove additional apps and users.
 const acmeUser = myMerchant.users.invite({ email: 'steven@example.com' });
 ```
 
-#### [Remove a user](https://github.com/paylike/api-docs#invite-user-to-a-merchant)
+#### [Remove a user](https://github.com/paylike/api-docs#revoke-user-from-a-merchant)
 ```js
 // You can use:
 acmeUser.remove();
