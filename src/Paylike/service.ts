@@ -1,7 +1,6 @@
 import { HTTP } from 'meteor/http';
 import PaylikeMerchants from "./merchants";
-
-const PackageJson = JSON.parse(Assets.getText('package.json'));
+import { PackageDetails } from "./index";
 
 export default class PaylikeService {
 
@@ -62,7 +61,7 @@ export default class PaylikeService {
                 auth: `:${this.api.key}`,
                 headers: {
                     Accept: 'application/json',
-                    'User-Agent': `Paylike-Meteor v${PackageJson.version} (https://github.com/JorgenVatle/paylike-meteor)`
+                    'User-Agent': `Paylike-Meteor v${PackageDetails.version} (https://github.com/JorgenVatle/paylike-meteor)`
                 },
             }).data;
         } catch (exception) {
