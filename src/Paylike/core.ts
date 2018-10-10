@@ -1,7 +1,7 @@
 import PaylikeService from "./service";
-import PaylikeDataCore from "./data-core";
+import PaylikeMerchant from "./merchant";
 
-type DataCore = new (service: PaylikeService, data: any) => PaylikeDataCore;
+type DataCoreInstance = typeof PaylikeMerchant;
 
 export default abstract class PaylikeCore {
 
@@ -41,7 +41,7 @@ export default abstract class PaylikeCore {
      * @param paylikeModule
      * @param data
      */
-    protected initialize(paylikeModule: DataCore, data: any) {
+    protected initialize(paylikeModule: DataCoreInstance, data: any) {
         return new paylikeModule(this.service, data);
     }
 }
