@@ -1,4 +1,5 @@
 import PaylikeDataCore from "../data-core";
+import PaylikeService from "../service";
 
 interface MerchantData extends PaylikeApi.merchants.merchant {}
 
@@ -12,6 +13,11 @@ class PaylikeMerchant extends PaylikeDataCore {
      * PaylikeMerchant data.
      */
     public entry: MerchantData;
+
+    /**
+     * Merchant service.
+     */
+    public service: PaylikeService;
 
     /**
      * Update the current merchant.
