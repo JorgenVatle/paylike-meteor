@@ -1,5 +1,6 @@
 import PaylikeDataCore from "../data-core";
 import PaylikeService from "../service";
+import PaylikeUsers from "./users";
 
 interface MerchantData extends PaylikeApi.merchants.merchant {}
 
@@ -44,6 +45,13 @@ class PaylikeMerchant extends PaylikeDataCore {
      */
     public buildPath(to: string) {
         return this.path + '/' + to.replace(/^\/+/, '');
+    }
+
+    /**
+     * Merchant users.
+     */
+    public get users() {
+        return new PaylikeUsers(this);
     }
 
 }
