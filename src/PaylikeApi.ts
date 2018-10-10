@@ -8,6 +8,11 @@ declare module PaylikeApi {
      */
     module merchants {
 
+        interface merchant extends create.input{
+            id: string,
+            key: string,
+        }
+
         /**
          * Create a merchant
          */
@@ -29,9 +34,8 @@ declare module PaylikeApi {
                 }
             }
 
-            interface response extends input {
-                id: string,
-                key: string,
+            interface response {
+                merchant: merchant
             }
         }
 
