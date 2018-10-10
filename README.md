@@ -27,11 +27,9 @@ console.log(paylike.me);
 Example output:
 ```json
 {
-  "identity": {
-    "id": "5bbce49ed0dde36a097c3574",
-    "name": "Paylike Meteor Test App",
-    "created": "2018-10-09T17:26:10.187Z"
-  }
+  "id": "5bbce49ed0dde36a097c3574",
+  "name": "Paylike Meteor Test App",
+  "created": "2018-10-09T17:26:10.187Z"
 }
 ```
 
