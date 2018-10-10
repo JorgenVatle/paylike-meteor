@@ -1,5 +1,3 @@
-import PaylikeCore from "../core";
-import PaylikeService from "../service";
 import PaylikeMerchant from "./merchant";
 
 export default class Users {
