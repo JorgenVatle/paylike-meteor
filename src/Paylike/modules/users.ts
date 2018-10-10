@@ -1,7 +1,7 @@
 import PaylikeMerchant from "./merchant";
 import PaylikeCore from "../core";
 
-export default class Users extends PaylikeCore {
+export default class PaylikeUsers extends PaylikeCore {
 
     /**
      * Paylike Merchant.
