@@ -20,7 +20,7 @@ class PaylikeUser extends PaylikeDataCore {
      * @param merchant
      * @param user
      */
-    constructor(merchant: PaylikeMerchant, user: UserData) {
+    public constructor(merchant: PaylikeMerchant, user: UserData) {
         super(merchant.service, user);
         this.merchant = merchant;
     }
