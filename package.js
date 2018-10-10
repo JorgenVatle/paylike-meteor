@@ -9,7 +9,7 @@ Package.describe({
 Package.onUse(function(api) {
     api.versionsFrom('1.2');
     api.use('ecmascript');
-    api.mainModule('dist/Paylike.js');
+    api.mainModule('dist/Paylike/index.js');
 });
 
 Package.onTest(function(api) {
