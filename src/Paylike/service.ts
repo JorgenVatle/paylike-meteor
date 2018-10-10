@@ -4,6 +4,8 @@ import { PackageDetails } from "./index";
 import PaylikeApps from "./modules/apps";
 import PaylikeApp from "./modules/app";
 
+export type HttpMethod = 'GET' | 'HEAD' | 'POST' | 'PUT' | 'DELETE' | 'TRACE' | 'OPTIONS' | 'CONNECT' | 'PATCH';
+
 export default class PaylikeService {
 
     /**
@@ -56,7 +58,7 @@ export default class PaylikeService {
      * @param data
      * @returns {object}
      */
-    public request(method: string, path: string, data?: any): any {
+    public request(method: HttpMethod, path: string, data?: any): any {
         try {
             return HTTP.call(method, this.buildUrl(path), {
                 data,
