@@ -26,10 +26,17 @@ class PaylikeUser extends PaylikeDataCore {
     }
 
     /**
-     * User path URI
+     * User path URI.
      */
     public get path() {
         return this.merchant.buildPath(`/users/${this.id}`);
+    }
+
+    /**
+     * Revoke a user from a merchant.
+     */
+    public revoke(): PaylikeApi.users.revoke.response {
+        return this.request('DELETE', this.path);
     }
 
 }
