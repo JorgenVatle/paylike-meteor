@@ -82,6 +82,18 @@ remove additional apps and users.
 const acmeUser = myMerchant.users.invite({ email: 'steven@example.com' });
 ```
 
+#### [Remove a user](https://github.com/paylike/api-docs#invite-user-to-a-merchant)
+```js
+// You can use:
+acmeUser.remove();
+
+// Or:
+acmeUser.revoke();
+
+// Or:
+acmeUser.delete();
+```
+
 ## License
 This repository is licensed under the ISC license.
 
