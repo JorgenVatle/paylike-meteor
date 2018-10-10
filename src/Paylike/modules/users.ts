@@ -1,6 +1,7 @@
 import PaylikeMerchant from "./merchant";
+import PaylikeCore from "../core";
 
-export default class Users {
+export default class Users extends PaylikeCore {
 
     /**
      * Paylike Merchant.
@@ -13,6 +14,7 @@ export default class Users {
      * @param merchant
      */
     constructor(merchant: PaylikeMerchant) {
+        super(merchant.service);
         this.merchant = merchant;
     }
 
@@ -22,7 +24,7 @@ export default class Users {
      * @param data
      */
     invite(data: PaylikeApi.users.invite.input) {
-        this.merchant.service.request('POST', this.merchant.buildPath('/users'), data);
+        this.request('POST', this.merchant.buildPath('/users'), data);
     }
 
 }
