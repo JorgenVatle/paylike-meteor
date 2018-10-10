@@ -12,7 +12,7 @@ export default abstract class PaylikeCore {
      *
      * @param service
      */
-    constructor(service: PaylikeService) {
+    protected constructor(service: PaylikeService) {
         this.service = service;
     }
 
