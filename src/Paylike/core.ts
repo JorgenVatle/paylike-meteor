@@ -1,4 +1,4 @@
-import PaylikeService from "./service";
+import PaylikeService, { HttpMethod } from "./service";
 import PaylikeMerchant from "./modules/merchant";
 import PaylikeApp from "./modules/app";
 
@@ -33,7 +33,7 @@ export default abstract class PaylikeCore {
      * @param path
      * @param data
      */
-    protected request(method: string, path: string, data?: any) {
+    protected request(method: HttpMethod, path: string, data?: any) {
         return this.service.request(method, path, data);
     }
 
