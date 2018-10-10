@@ -1,6 +1,7 @@
 import { HTTP } from 'meteor/http';
 import PaylikeMerchants from "./merchants";
 import { PackageDetails } from "./index";
+import PaylikeApps from "./apps";
 
 export default class PaylikeService {
 
@@ -81,5 +82,12 @@ export default class PaylikeService {
      */
     public get merchants(): PaylikeMerchants {
         return new PaylikeMerchants(this);
+    }
+
+    /**
+     * Paylike apps class
+     */
+    public get apps(): PaylikeApps {
+        return new PaylikeApps(this);
     }
 }
