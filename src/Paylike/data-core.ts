@@ -19,7 +19,7 @@ export default abstract class PaylikeDataCore extends PaylikeCore {
      *
      * @param data
      */
-    private merge(data: any) {
+    protected merge(data: any) {
         this.entry = data;
         Object.assign(this, data);
     }
