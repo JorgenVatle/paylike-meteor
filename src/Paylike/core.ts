@@ -1,7 +1,7 @@
 import PaylikeService from "./service";
-import PaylikeMerchant from "./merchant";
+import PaylikeDataCore from "./data-core";
 
-type PaylikeDataModule = typeof PaylikeMerchant;
+type DataCore = new (service: PaylikeService, data: any) => PaylikeDataCore;
 
 export default abstract class PaylikeCore {
 
@@ -19,24 +19,9 @@ export default abstract class PaylikeCore {
      * Paylike core constructor.
      *
      * @param service
-     * @param data
      */
-    protected constructor(service: PaylikeService, data?: any) {
+    protected constructor(service: PaylikeService) {
         this.service = service;
-
-        if (data) {
-            this.merge(data)
-        }
-    }
-
-    /**
-     * Merge the given data with the current instance.
-     *
-     * @param data
-     */
-    protected merge(data: any) {
-        this.entry = data;
-        Object.assign(this, data);
     }
 
     /**
@@ -56,7 +41,7 @@ export default abstract class PaylikeCore {
      * @param paylikeModule
      * @param data
      */
-    protected initialize(paylikeModule: PaylikeDataModule, data: any) {
+    protected initialize(paylikeModule: DataCore, data: any) {
         return new paylikeModule(this.service, data);
     }
 }
