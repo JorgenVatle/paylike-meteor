@@ -2,6 +2,7 @@ import { HTTP } from 'meteor/http';
 import PaylikeMerchants from "./merchants";
 import { PackageDetails } from "./index";
 import PaylikeApps from "./apps";
+import PaylikeApp from "./app";
 
 export default class PaylikeService {
 
@@ -73,8 +74,8 @@ export default class PaylikeService {
     /**
      * Fetches the current app
      */
-    public get me(): PaylikeApi.apps.me.response {
-        return this.request('GET', '/me');
+    public get me(): PaylikeApp {
+        return this.apps.me;
     }
 
     /**
