@@ -2,21 +2,6 @@ declare module PaylikeApi {
     type CurrencyCode = 'USD' | 'EUR' | 'GBP' | 'AUD' | 'CAD' | string
 
     /**
-     * Current app
-     *
-     * @link https://api.paylike.io/me
-     */
-    module me {
-        interface get {
-            identity: {
-                id: string,
-                name?: string,
-                created?: string,
-            }
-        }
-    }
-
-    /**
      * Merchants
      *
      * @link https://github.com/paylike/api-docs#merchants
@@ -91,6 +76,19 @@ declare module PaylikeApi {
                     key: String,
                     name?: String,
                     created?: String,
+                }
+            }
+        }
+
+        /**
+         * Fetch the current app
+         */
+        module me {
+            interface response {
+                identity: {
+                    id: string,
+                    name?: string,
+                    created?: string,
                 }
             }
         }
