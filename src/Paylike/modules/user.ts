@@ -12,7 +12,7 @@ class PaylikeUser extends PaylikeDataCore {
     /**
      * Merchant this user belongs to.
      */
-    protected merchant: PaylikeMerchant;
+    public merchant: PaylikeMerchant;
 
     /**
      * Paylike user constructor.

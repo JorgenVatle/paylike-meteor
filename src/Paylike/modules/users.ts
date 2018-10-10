@@ -7,7 +7,7 @@ export default class PaylikeUsers extends PaylikeCore {
     /**
      * Paylike Merchant.
      */
-    protected merchant: PaylikeMerchant;
+    public merchant: PaylikeMerchant;
 
     /**
      * Paylike Merchant users constructor.
