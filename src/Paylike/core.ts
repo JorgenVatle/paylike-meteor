@@ -1,7 +1,8 @@
 import PaylikeService from "./service";
 import PaylikeMerchant from "./merchant";
+import PaylikeApp from "./app";
 
-type DataCoreInstance = typeof PaylikeMerchant;
+type DataCoreInstance = typeof PaylikeMerchant | typeof PaylikeApp;
 
 export default abstract class PaylikeCore {
 
