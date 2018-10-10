@@ -31,4 +31,15 @@ export default abstract class PaylikeCore {
         Object.assign(this, data);
     }
 
+    /**
+     * Send a request using the attached service.
+     *
+     * @param method
+     * @param path
+     * @param data
+     */
+    protected request(method: string, path: string, data?: any) {
+        return this.service.request(method, path, data);
+    }
+
 }
