@@ -108,7 +108,6 @@ declare module PaylikeApi {
         module invite {
             interface input {
                 email: string,
-                name?: string,
             }
 
             interface response {
