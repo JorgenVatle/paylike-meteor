@@ -1,4 +1,4 @@
-import PaylikeCore from "./core";
+import PaylikeCore from "../core";
 import PaylikeApp from "./app";
 
 export default class PaylikeApps extends PaylikeCore {

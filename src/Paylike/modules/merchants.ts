@@ -1,5 +1,5 @@
 import PaylikeMerchant from "./merchant";
-import PaylikeCore from "./core";
+import PaylikeCore from "../core";
 
 export default class PaylikeMerchants extends PaylikeCore {
 

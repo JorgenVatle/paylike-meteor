@@ -1,6 +1,6 @@
 import PaylikeService from "./service";
-import PaylikeMerchant from "./merchant";
-import PaylikeApp from "./app";
+import PaylikeMerchant from "./modules/merchant";
+import PaylikeApp from "./modules/app";
 
 type DataCoreInstance = typeof PaylikeMerchant | typeof PaylikeApp;
 type DataCoreClass = PaylikeMerchant | PaylikeApp;
