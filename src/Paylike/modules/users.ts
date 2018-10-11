@@ -31,7 +31,7 @@ export default class PaylikeUsers extends PaylikeCore {
      *
      * @param data
      */
-    invite(data: PaylikeApi.users.invite.input): PaylikeUser {
+    public invite(data: PaylikeApi.users.invite.input): PaylikeUser {
         return <PaylikeUser>this.initialize(
             PaylikeUser,
             this.request('POST', this.path, data).user,
@@ -44,7 +44,7 @@ export default class PaylikeUsers extends PaylikeCore {
      *
      * @param query
      */
-    fetch(query: PaylikeApi.PaginationQuery = { limit: 50 }) {
+    public fetch(query: PaylikeApi.PaginationQuery = { limit: 50 }) {
         return this.initializeList(
             PaylikeUser,
             this.request('GET', this.path, query),
