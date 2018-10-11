@@ -1,6 +1,6 @@
 import { HTTP } from 'meteor/http';
 import PaylikeMerchants from "./modules/merchants";
-import { PackageDetails } from "../index";
+import Helpers from '../helpers';
 import PaylikeCurrentApp from "./modules/current-app";
 import PaylikeApp from "./modules/app";
 
@@ -34,10 +34,7 @@ export default class PaylikeService {
      * @param path
      */
     protected buildUrl(path: string): string {
-        const base = (this.api.url + '/').replace(/\/+$/, '/');
-        const endpoint = path.replace(/^\/+/, '');
-
-        return base + endpoint;
+        return Helpers.buildUri(this.api.url, path);
     }
 
     /**
@@ -63,7 +60,7 @@ export default class PaylikeService {
             return HTTP.call(method, this.buildUrl(path), {
                 headers: {
                     Accept: 'application/json',
-                    'User-Agent': `Paylike-Meteor v${PackageDetails.version} (https://github.com/JorgenVatle/paylike-meteor)`
+                    'User-Agent': `Paylike-Meteor v${Helpers.package.version} (https://github.com/JorgenVatle/paylike-meteor)`
                 },
                 auth: `:${this.api.key}`,
                 params,
