@@ -122,4 +122,13 @@ declare module PaylikeApi {
             type response = void;
         }
     }
+
+    /**
+     * Query parameters for pagination requests.
+     */
+    interface PaginationQuery {
+        limit: string | number,
+        before: string,
+        after: string,
+    }
 }
