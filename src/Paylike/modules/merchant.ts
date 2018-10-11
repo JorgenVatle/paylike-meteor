@@ -1,4 +1,4 @@
-import PaylikeDataCore from "../data-core";
+import PaylikeDataCore from "../core-data";
 import PaylikeService from "../service";
 import PaylikeUsers from "./users";
 

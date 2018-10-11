@@ -1,4 +1,4 @@
-import PaylikeDataCore from "../data-core";
+import PaylikeDataCore from "../core-data";
 
 interface PaylikeAppData extends PaylikeApi.apps.app {}
 
