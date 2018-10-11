@@ -1,7 +1,13 @@
 import PaylikeCoreData from "../core-data";
 import PaylikeMerchant from "./merchant";
 
-export default class PaylikeTransaction extends PaylikeCoreData {
+interface TransactionData extends PaylikeApi.transactions.transaction {}
+
+interface PaylikeTransaction extends TransactionData {
+    entry: TransactionData;
+}
+
+class PaylikeTransaction extends PaylikeCoreData {
 
     /**
      * Paylike merchant.
@@ -20,3 +26,5 @@ export default class PaylikeTransaction extends PaylikeCoreData {
     }
 
 }
+
+export default PaylikeTransaction;
