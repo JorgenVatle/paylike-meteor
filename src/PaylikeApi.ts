@@ -137,7 +137,18 @@ declare module PaylikeApi {
             },
         }
 
-        interface trail {}
+        interface trail {
+            lineId: string,
+            amount: number,
+            balance: number,
+            capture: boolean,
+            created: string,
+            descriptor: string,
+            fee: {
+                flat: number,
+                rate: number,
+            }
+        }
 
         interface transaction {
             id: string,
