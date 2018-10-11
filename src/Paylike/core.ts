@@ -3,8 +3,8 @@ import PaylikeMerchant from "./modules/merchant";
 import PaylikeApp from "./modules/app";
 import PaylikeUser from "./modules/user";
 
-type CoreDataInstance = typeof PaylikeMerchant | typeof PaylikeApp | typeof PaylikeUser | any;
-type CoreDataClass = PaylikeMerchant | PaylikeApp | PaylikeUser;
+export type CoreDataInstance = typeof PaylikeMerchant | typeof PaylikeApp | typeof PaylikeUser | any;
+export type CoreDataClass = PaylikeMerchant | PaylikeApp | PaylikeUser;
 
 export default abstract class PaylikeCore {
 
