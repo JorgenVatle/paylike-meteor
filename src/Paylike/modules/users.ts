@@ -46,4 +46,13 @@ export default class PaylikeUsers extends PaylikeCorePaginated {
         )
     }
 
+    /**
+     * Fetch a Paylike user by email.
+     *
+     * @param email
+     */
+    public find(email: string) {
+        return this.fetch().find((user: PaylikeUser) => user.email.toLowerCase() === email.toUpperCase());
+    }
+
 }
