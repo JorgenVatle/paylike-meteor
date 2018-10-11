@@ -71,6 +71,15 @@ myMerchant.update({
 console.log(myMerchant.name) // "Acme Commerce 2"
 ```
 
+#### [Fetch all merchants](https://github.com/paylike/api-docs#fetch-all-merchants)
+```js
+const merchants = paylike.merchants.fetch({
+    limit: 50,
+    before: 'merchant-id-goes-here', // optional - Fetches all merchants before the given id.
+    after: 'merchant-id-goes-here', // optional - Fetches all merchants after the given id.
+});
+```
+
 ### [Merchant's Users](https://github.com/paylike/api-docs#merchants-users)
 A merchant can have several users attached. These have complete access to their respective merchant and can add and
 remove additional apps and users.
