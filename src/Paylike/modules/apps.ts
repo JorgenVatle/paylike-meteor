@@ -8,7 +8,7 @@ export default class PaylikeApps extends PaylikeCore {
      *
      * @param app
      */
-    create(app: PaylikeApi.apps.create.input): PaylikeApp {
+    public create(app: PaylikeApi.apps.create.input): PaylikeApp {
         return <PaylikeApp>this.initialize(
             PaylikeApp,
             this.request('POST', '/apps', app).app
@@ -18,7 +18,7 @@ export default class PaylikeApps extends PaylikeCore {
     /**
      * Fetch current app
      */
-    get me(): PaylikeApp {
+    public get me(): PaylikeApp {
         return <PaylikeApp>this.initialize(
             PaylikeApp,
             this.request('GET', '/me').identity
