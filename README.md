@@ -83,6 +83,11 @@ console.log(acmeUser.id); // "5bbe8430882cf804f6112d9f"
 console.log(acmeUser.isMember); // "true"/"false" - Whether or not the user was a member before creation.
 ```
 
+#### [Fetch a user](https://github.com/paylike/api-docs#merchants-users)
+```js
+const acmeUser = myMerchant.users.find('steven@example.com');
+```
+
 #### [Remove a user](https://github.com/paylike/api-docs#revoke-user-from-a-merchant)
 ```js
 // You can use:
