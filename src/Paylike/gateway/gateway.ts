@@ -28,7 +28,7 @@ export default class PaylikeGateway {
      * @param message
      * @param metadata
      */
-    public exception(message: string, metadata: any) {
+    protected exception(message: string, metadata: any) {
         return new Meteor.Error('Paylike Gateway', message, metadata);
     }
 
@@ -49,7 +49,7 @@ export default class PaylikeGateway {
      * @param data
      * @returns {object}
      */
-    public request(method: HttpMethod, path: string, data?: any): any {
+    protected request(method: HttpMethod, path: string, data?: any): any {
         try {
             return HTTP.call(method, this.buildUrl(path), {
                 headers: {
