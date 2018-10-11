@@ -1,5 +1,6 @@
 import PaylikeCorePaginated from "../core-paginated";
 import PaylikeMerchant from "./merchant";
+import PaylikeTransaction from "./transaction";
 
 export default class PaylikeTransactions extends PaylikeCorePaginated {
 
@@ -7,6 +8,11 @@ export default class PaylikeTransactions extends PaylikeCorePaginated {
      * Paylike Merchant responsible these transactions.
      */
     protected merchant: PaylikeMerchant;
+
+    /**
+     * Single transaction module.
+     */
+    protected paylikeModule = PaylikeTransaction;
 
     /**
      * Transactions path.
