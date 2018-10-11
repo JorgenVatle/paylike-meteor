@@ -32,6 +32,13 @@ class PaylikeTransaction extends PaylikeCoreData {
         this.merchant = merchant;
     }
 
+    /**
+     * Synchronize the current transaction with Paylike.
+     */
+    public update() {
+        this.merge(this.merchant.transactions.find(this.id).entry);
+    }
+
 }
 
 export default PaylikeTransaction;
