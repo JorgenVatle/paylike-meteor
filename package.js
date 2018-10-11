@@ -26,7 +26,7 @@ Package.onTest(function(api) {
     api.use('meteortesting:mocha');
     api.use('jorgenvatle:paylike');
     api.addAssets('tests/data.json', 'server');
-    api.mainModule('tests/paylike.test.js');
+    api.mainModule('tests/paylike.test.js', 'server');
 });
 
 module.exports = {
