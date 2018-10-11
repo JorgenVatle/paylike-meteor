@@ -77,7 +77,7 @@ export default class PaylikeService {
      * Fetches the current app
      */
     public get me(): PaylikeApp {
-        return this.currentApp.me;
+        return this.app.me;
     }
 
     /**
@@ -90,7 +90,7 @@ export default class PaylikeService {
     /**
      * Paylike apps class
      */
-    public get currentApp(): PaylikeCurrentApp {
+    public get app(): PaylikeCurrentApp {
         return new PaylikeCurrentApp(this);
     }
 }
