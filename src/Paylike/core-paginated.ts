@@ -3,9 +3,14 @@ import PaylikeCore, { CoreDataInstance } from "./core";
 export default abstract class PaylikeCorePaginated extends PaylikeCore {
 
     /**
-     * Pagination path
+     * Module path
      */
-    protected path: string;
+    protected path?: string;
+
+    /**
+     * Path specific to pagination for the current module.
+     */
+    protected paginationPath?: string;
 
     /**
      * Alternative service object
@@ -28,7 +33,7 @@ export default abstract class PaylikeCorePaginated extends PaylikeCore {
     public fetch(query: PaylikeApi.PaginationQuery = { limit: 50 }) {
         return this.initializeList(
             this.singularModule,
-            this.request('GET', this.path, query),
+            this.request('GET', this.paginationPath || this.path, query),
             this.alternativeService
         );
     }
