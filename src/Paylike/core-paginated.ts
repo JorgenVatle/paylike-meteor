@@ -1,5 +1,4 @@
-import PaylikeCore from "./core";
-import PaylikeCoreData from "./core-data";
+import PaylikeCore, { CoreDataInstance } from "./core";
 
 export default abstract class PaylikeCorePaginated extends PaylikeCore {
 
@@ -19,7 +18,7 @@ export default abstract class PaylikeCorePaginated extends PaylikeCore {
      * E.g. if `Merchants` extends this class, this value
      * would be `Merchant`.
      */
-    protected singularModule: PaylikeCoreData;
+    protected singularModule: CoreDataInstance;
 
     /**
      * Build an array of users.
