@@ -39,15 +39,6 @@ class PaylikeMerchant extends PaylikeCoreData {
     }
 
     /**
-     * Build a merchant path to the given location.
-     *
-     * @param to
-     */
-    public buildPath(to: string): string {
-        return this.path + '/' + to.replace(/^\/+/, '');
-    }
-
-    /**
      * Merchant users.
      */
     public get users(): PaylikeUsers {

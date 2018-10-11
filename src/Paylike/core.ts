@@ -19,6 +19,11 @@ export default abstract class PaylikeCore {
     protected entry: any;
 
     /**
+     * REST path for the current module.
+     */
+    protected path: string;
+
+    /**
      * Paylike core constructor.
      *
      * @param service
@@ -60,5 +65,14 @@ export default abstract class PaylikeCore {
         return list.map((data) => {
             return this.initialize(paylikeModule, data, alternativeService)
         });
+    }
+
+    /**
+     * Build a merchant path to the given location.
+     *
+     * @param to
+     */
+    public buildPath(to: string): string {
+        return this.path + '/' + to.replace(/^\/+/, '');
     }
 }
