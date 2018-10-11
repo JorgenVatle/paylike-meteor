@@ -11,9 +11,7 @@ export default class PaylikeMerchants extends PaylikeCorePaginated {
     /**
      * Merchants path.
      */
-    public get path() {
-        return '/merchants';
-    }
+    public path = '/merchants';
 
     /**
      * Fetch a merchant.
@@ -23,7 +21,7 @@ export default class PaylikeMerchants extends PaylikeCorePaginated {
     public get(merchantId: string): PaylikeMerchant {
         return <PaylikeMerchant>this.initialize(
             PaylikeMerchant,
-            this.service.request('GET', `/merchants/${merchantId}`).merchant,
+            this.service.request('GET', this.buildPath(`/${merchantId}`)).merchant,
         )
     }
 
@@ -35,7 +33,7 @@ export default class PaylikeMerchants extends PaylikeCorePaginated {
     public create(merchant: PaylikeApi.merchants.create.input): PaylikeMerchant {
         return <PaylikeMerchant>this.initialize(
             PaylikeMerchant,
-            this.service.request('POST', '/merchants', merchant).merchant
+            this.service.request('POST', this.path, merchant).merchant
         );
     }
 }
