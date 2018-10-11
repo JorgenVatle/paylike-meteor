@@ -71,7 +71,7 @@ export default class PaylikeGateway {
      *
      * @param transaction
      */
-    createPayment(transaction: PaylikeGatewayApi.payment.create.input): PaylikeGatewayApi.payment.create.response['transaction'] {
+    public createPayment(transaction: PaylikeGatewayApi.payment.create.input): PaylikeGatewayApi.payment.create.response['transaction'] {
         return this.request('POST', '/transactions', transaction).transaction;
     }
 
@@ -80,7 +80,7 @@ export default class PaylikeGateway {
      *
      * @param card
      */
-    tokenizeCard(card: PaylikeGatewayApi.card.tokenize.input): PaylikeGatewayApi.card.tokenize.response['card'] {
+    public tokenizeCard(card: PaylikeGatewayApi.card.tokenize.input): PaylikeGatewayApi.card.tokenize.response['card'] {
         return this.request('POST', '/cards', card).card;
     }
 }
