@@ -188,6 +188,15 @@ declare module PaylikeApi {
             }
             type response = void;
         }
+
+        module capture {
+            interface input {
+                amount: number,
+                currency: CurrencyCode,
+                descriptor: string,
+            }
+            type response = void;
+        }
     }
 
     /**
