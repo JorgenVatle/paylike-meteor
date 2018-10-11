@@ -15,6 +15,11 @@ export default class PaylikeUsers extends PaylikeCorePaginated {
     protected singularModule = PaylikeUser;
 
     /**
+     * Identifier to use when running `find()` calls.
+     */
+    protected findKey = 'email';
+
+    /**
      * Paylike Merchant users constructor.
      *
      * @param merchant
@@ -45,14 +50,4 @@ export default class PaylikeUsers extends PaylikeCorePaginated {
             this.merchant
         )
     }
-
-    /**
-     * Fetch a Paylike user by email.
-     *
-     * @param email
-     */
-    public find(email: string) {
-        return this.fetch().find((user: PaylikeUser) => user.email.toLowerCase() === email.toLowerCase());
-    }
-
 }

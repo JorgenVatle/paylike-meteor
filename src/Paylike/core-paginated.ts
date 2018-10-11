@@ -1,4 +1,5 @@
 import PaylikeCore, { CoreDataInstance } from "./core";
+import PaylikeUser from "./modules/user";
 
 export default abstract class PaylikeCorePaginated extends PaylikeCore {
 
@@ -26,6 +27,11 @@ export default abstract class PaylikeCorePaginated extends PaylikeCore {
     protected singularModule: CoreDataInstance;
 
     /**
+     * Key to use for `find()` calls.
+     */
+    protected findKey: string = 'id';
+
+    /**
      * Build an array of users.
      *
      * @param query
@@ -36,5 +42,15 @@ export default abstract class PaylikeCorePaginated extends PaylikeCore {
             this.request('GET', this.paginationPath || this.path, query),
             this.alternativeService
         );
+    }
+
+    /**
+     * Fetch a Paylike user by email.
+     *
+     * @param search
+     * @param key
+     */
+    public find(search: string, key = this.findKey) {
+        return this.fetch().find((entry: any) => entry['key'].toLowerCase() === search.toLowerCase());
     }
 }
