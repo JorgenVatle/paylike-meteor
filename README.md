@@ -37,7 +37,7 @@ Example output:
 ```
 
 #### [Add app](https://github.com/paylike/api-docs#fetch-current-app)
-This adds an app to the merchant you belong to.
+This adds an app to the merchant your current API key (app) belongs to.
 ```js
 const newApp = paylike.app.create({
     name: 'my-new-app' // Optional
