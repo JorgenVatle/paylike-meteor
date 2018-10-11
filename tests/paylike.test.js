@@ -66,4 +66,10 @@ describe('Paylike', function() {
 
         assert.isAtLeast(users.length, 1);
     });
+
+    it('should fetch a list of merchants', function() {
+        const merchants = paylike.merchants.fetch();
+
+        assert.isAtLeast(merchants.length, 1);
+    })
 });
