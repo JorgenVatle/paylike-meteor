@@ -111,7 +111,7 @@ declare module PaylikeApi {
             }
 
             interface response {
-                user: user,
+                isMember: boolean
             }
         }
 
