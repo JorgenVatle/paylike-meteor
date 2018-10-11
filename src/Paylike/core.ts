@@ -21,7 +21,7 @@ export default abstract class PaylikeCore {
     /**
      * REST path for the current module.
      */
-    protected path: string;
+    protected path?: string;
 
     /**
      * Paylike core constructor.
