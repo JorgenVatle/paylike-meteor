@@ -21,7 +21,7 @@ export default class PaylikeApps extends PaylikeCorePaginated {
      * Paylike apps path
      */
     public get path() {
-        return this.merchant.buildPath('/apps');
+        return this.merchant && this.merchant.buildPath('/apps') || '/apps';
     }
 
     /**
