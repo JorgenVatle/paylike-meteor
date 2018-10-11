@@ -74,9 +74,9 @@ console.log(myMerchant.name) // "Acme Commerce 2"
 #### [Fetch all merchants](https://github.com/paylike/api-docs#fetch-all-merchants)
 ```js
 const merchants = paylike.merchants.fetch({
-    limit: 50,
-    before: 'merchant-id-goes-here', // optional - Fetches all merchants before the given id.
-    after: 'merchant-id-goes-here', // optional - Fetches all merchants after the given id.
+    limit: 50,                          // optional - Defaults to 50.
+    before: 'merchant-id-goes-here',    // optional - Fetches all merchants before the given id.
+    after: 'merchant-id-goes-here',     // optional - Fetches all merchants after the given id.
 });
 ```
 
