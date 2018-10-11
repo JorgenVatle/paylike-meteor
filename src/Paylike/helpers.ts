@@ -18,5 +18,12 @@ export default {
      */
     get package() {
         return eval(Assets.getText('package.js')).details;
+    },
+
+    /**
+     * Package user agent.
+     */
+    get userAgent() {
+        return `Paylike-Meteor v${this.package.version} (https://github.com/JorgenVatle/paylike-meteor)`
     }
 }

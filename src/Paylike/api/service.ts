@@ -60,7 +60,7 @@ export default class PaylikeService {
             return HTTP.call(method, this.buildUrl(path), {
                 headers: {
                     Accept: 'application/json',
-                    'User-Agent': `Paylike-Meteor v${Helpers.package.version} (https://github.com/JorgenVatle/paylike-meteor)`
+                    'User-Agent': Helpers.userAgent,
                 },
                 auth: `:${this.api.key}`,
                 params,
