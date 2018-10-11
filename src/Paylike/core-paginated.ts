@@ -1,21 +1,17 @@
 import PaylikeCore from "./core";
 import PaylikeCoreData from "./core-data";
 
-export interface Paginated {
-    path: string,
-}
-
-export default abstract class PaylikeCorePaginated extends PaylikeCore implements Paginated {
+export default abstract class PaylikeCorePaginated extends PaylikeCore {
 
     /**
      * Pagination path
      */
-    path: string;
+    protected path: string;
 
     /**
      * Alternative service object
      */
-    alternativeService?: any;
+    protected alternativeService?: any;
 
     /**
      * Class each paginated entry should be initialized in.
@@ -23,7 +19,7 @@ export default abstract class PaylikeCorePaginated extends PaylikeCore implement
      * E.g. if `Merchants` extends this class, this value
      * would be `Merchant`.
      */
-    singularModule: PaylikeCoreData;
+    protected singularModule: PaylikeCoreData;
 
     /**
      * Build an array of users.
