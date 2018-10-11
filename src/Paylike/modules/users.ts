@@ -17,7 +17,7 @@ export default class PaylikeUsers extends PaylikeCorePaginated {
     /**
      * Identifier to use when running `find()` calls.
      */
-    protected findKey = 'email';
+    protected primaryKey = 'email';
 
     /**
      * Paylike Merchant users constructor.

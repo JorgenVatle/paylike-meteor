@@ -29,7 +29,7 @@ export default abstract class PaylikeCorePaginated extends PaylikeCore {
     /**
      * Key to use for `find()` calls.
      */
-    protected findKey: string = 'id';
+    protected primaryKey: string = 'id';
 
     /**
      * Build an array of users.
@@ -45,12 +45,12 @@ export default abstract class PaylikeCorePaginated extends PaylikeCore {
     }
 
     /**
-     * Fetch a Paylike user by email.
+     * Find an entry in the paginated list with the given key-value pair.
      *
-     * @param search
+     * @param value
      * @param key
      */
-    public find(search: string, key = this.findKey) {
-        return this.fetch().find((entry: any) => entry['key'].toLowerCase() === search.toLowerCase());
+    public find(value: string, key = this.primaryKey) {
+        return this.fetch().find((entry: any) => entry['key'].toLowerCase() === value.toLowerCase());
     }
 }
