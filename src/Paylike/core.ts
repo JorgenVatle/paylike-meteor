@@ -1,9 +1,10 @@
 import PaylikeService, { HttpMethod } from "./service";
 import PaylikeMerchant from "./modules/merchant";
 import PaylikeApp from "./modules/app";
+import PaylikeUser from "./modules/user";
 
-type DataCoreInstance = typeof PaylikeMerchant | typeof PaylikeApp;
-type DataCoreClass = PaylikeMerchant | PaylikeApp;
+type DataCoreInstance = typeof PaylikeMerchant | typeof PaylikeApp | typeof PaylikeUser | any;
+type DataCoreClass = PaylikeMerchant | PaylikeApp | PaylikeUser;
 
 export default abstract class PaylikeCore {
 
