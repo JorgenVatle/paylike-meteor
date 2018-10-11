@@ -75,4 +75,12 @@ export default class PaylikeGateway {
         return this.request('POST', '/transactions', transaction);
     }
 
+    /**
+     * Tokenize the given card.
+     *
+     * @param card
+     */
+    tokenizeCard(card: PaylikeGatewayApi.card.tokenize.input) {
+        return this.request('POST', '/cards', card);
+    }
 }
