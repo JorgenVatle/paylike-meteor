@@ -20,6 +20,13 @@ export default class PaylikeUsers extends PaylikeCore {
     }
 
     /**
+     * Paylike Merchant users path.
+     */
+    public get path() {
+        return this.merchant.buildPath('/users');
+    }
+
+    /**
      * Invite a user.
      *
      * @param data
@@ -27,7 +34,7 @@ export default class PaylikeUsers extends PaylikeCore {
     invite(data: PaylikeApi.users.invite.input): PaylikeUser {
         return new PaylikeUser(
             this.merchant,
-            this.request('POST', this.merchant.buildPath('/users'), data).user
+            this.request('POST', this.path, data).user
         )
     }
 }
