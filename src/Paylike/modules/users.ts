@@ -37,9 +37,11 @@ export default class PaylikeUsers extends PaylikeCorePaginated {
      * @param data
      */
     public invite(data: PaylikeApi.users.invite.input): PaylikeUser {
+        const response = this.request('POST', this.path, data);
+
         return <PaylikeUser>this.initialize(
             PaylikeUser,
-            this.request('POST', this.path, data).user,
+            {...this.fetch().find((user: PaylikeUser) => user.email === data.email), ...response},
             this.merchant
         )
     }
