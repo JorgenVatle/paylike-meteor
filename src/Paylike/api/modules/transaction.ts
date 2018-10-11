@@ -39,6 +39,17 @@ class PaylikeTransaction extends PaylikeCoreData {
         this.merge(this.merchant.transactions.find(this.id).entry);
     }
 
+    /**
+     * Void the given amount from the current transaction.
+     *
+     * @param amount
+     */
+    public void(amount: number) {
+        this.request('POST', this.buildPath('/voids'), { amount });
+        this.update();
+        return this;
+    }
+
 }
 
 export default PaylikeTransaction;
