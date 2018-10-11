@@ -31,4 +31,17 @@ export default class PaylikeTransactions extends PaylikeCorePaginated {
         this.merchant = merchant;
     }
 
+    /**
+     * Fetch a transaction.
+     *
+     * @param transactionId
+     */
+    public find(transactionId: string): PaylikeTransaction {
+        return <PaylikeTransaction>this.initialize(
+            PaylikeTransaction,
+            this.service.request('GET', this.buildPath(`/${transactionId}`)).transaction,
+            this.merchant,
+        )
+    }
+
 }
