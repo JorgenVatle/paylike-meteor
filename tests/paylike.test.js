@@ -1,7 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import { expect, assert } from 'chai';
 import Paylike, { PaylikeGateway } from "../dist";
-import { transactions } from "../src/Paylike/api";
 
 const testData = JSON.parse(Assets.getText('tests/data.json'));
 const paylike = new Paylike(Meteor.settings.paylike.secret);
