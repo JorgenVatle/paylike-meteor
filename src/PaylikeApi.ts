@@ -72,7 +72,7 @@ declare module PaylikeApi {
             created?: string,
         }
 
-        interface app { key?: string }
+        interface app extends identity { key?: string }
 
         /**
          * Create an app
