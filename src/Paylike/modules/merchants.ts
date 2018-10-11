@@ -14,6 +14,13 @@ export default class PaylikeMerchants extends PaylikeCorePaginated {
     public path = '/merchants';
 
     /**
+     * Merchants pagination path
+     */
+    public get paginationPath() {
+        return `/identities/${this.service.me.id}/merchants`
+    }
+
+    /**
      * Fetch a merchant.
      *
      * @param merchantId
