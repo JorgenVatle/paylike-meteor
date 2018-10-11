@@ -1,6 +1,7 @@
 import PaylikeCore from "../core";
 import PaylikeApp from "./app";
 import PaylikeMerchant from "./merchant";
+import PaylikeService from "../service";
 
 export default class PaylikeApps extends PaylikeCore {
 
@@ -12,11 +13,16 @@ export default class PaylikeApps extends PaylikeCore {
     /**
      * Paylike Apps constructor.
      *
-     * @param merchant
+     * @param merchantOrService
      */
-    public constructor(merchant: PaylikeMerchant) {
-        super(merchant.service);
-        this.merchant = merchant;
+    public constructor(merchantOrService: PaylikeMerchant | PaylikeService) {
+        if (merchantOrService instanceof PaylikeService) {
+            super(merchantOrService);
+            return;
+        }
+
+        super(merchantOrService.service);
+        this.merchant = merchantOrService;
     }
 
     /**
