@@ -66,4 +66,13 @@ export default class PaylikeGateway {
         }
     }
 
+    /**
+     * Create a new payment.
+     *
+     * @param transaction
+     */
+    createPayment(transaction: PaylikeGatewayApi.payment.create.input) {
+        return this.request('POST', '/transactions', transaction);
+    }
+
 }
