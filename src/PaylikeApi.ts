@@ -124,6 +124,45 @@ declare module PaylikeApi {
     }
 
     /**
+     * Transactions
+     */
+    module transactions {
+        interface card {
+            bin: string,
+            expiry: string,
+            last4: string,
+            scheme: string,
+            code: {
+                present: boolean,
+            },
+        }
+
+        interface trail {}
+
+        interface transaction {
+            id: string,
+            amount: number,
+            merchantId: string,
+            capturedAmount: number,
+            card: card,
+            created: string,
+            currency: CurrencyCode,
+            custom: string | null,
+            descriptor: string,
+            disputedAmount: number,
+            error: boolean,
+            pendingAmount: number,
+            recurring: boolean,
+            refundedAmount: number,
+            successful: boolean,
+            tds: string,
+            trail: Array<trail>
+            test: boolean,
+            voidedAmount: number,
+        }
+    }
+
+    /**
      * Query parameters for pagination requests.
      */
     interface PaginationQuery {
