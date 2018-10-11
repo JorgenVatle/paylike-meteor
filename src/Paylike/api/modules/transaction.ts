@@ -49,6 +49,16 @@ class PaylikeTransaction extends PaylikeCoreData {
         return this.update();
     }
 
+    /**
+     * Issue a refund for the current transaction.
+     *
+     * @param data
+     */
+    public refund(data: PaylikeApi.transactions.refund.input): this {
+        this.request('POST', this.buildPath('refunds'), data);
+        return this.update();
+    }
+
 }
 
 export default PaylikeTransaction;
