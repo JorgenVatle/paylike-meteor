@@ -32,9 +32,10 @@ export default class PaylikeUsers extends PaylikeCore {
      * @param data
      */
     invite(data: PaylikeApi.users.invite.input): PaylikeUser {
-        return new PaylikeUser(
-            this.merchant,
-            this.request('POST', this.path, data).user
+        return <PaylikeUser>this.initialize(
+            PaylikeUser,
+            this.request('POST', this.path, data).user,
+            this.merchant
         )
     }
 }
