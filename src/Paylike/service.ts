@@ -55,18 +55,18 @@ export default class PaylikeService {
      *
      * @param method
      * @param path
-     * @param data
+     * @param params
      * @returns {object}
      */
-    public request(method: HttpMethod, path: string, data?: any): any {
+    public request(method: HttpMethod, path: string, params?: any): any {
         try {
             return HTTP.call(method, this.buildUrl(path), {
-                data,
-                auth: `:${this.api.key}`,
                 headers: {
                     Accept: 'application/json',
                     'User-Agent': `Paylike-Meteor v${PackageDetails.version} (https://github.com/JorgenVatle/paylike-meteor)`
                 },
+                auth: `:${this.api.key}`,
+                params,
             }).data;
         } catch (exception) {
             throw this.exception(exception.message, exception);
