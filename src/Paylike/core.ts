@@ -42,9 +42,10 @@ export default abstract class PaylikeCore {
      *
      * @param paylikeModule
      * @param data
+     * @param alternativeService
      */
-    protected initialize(paylikeModule: DataCoreInstance, data: any): DataCoreClass {
-        return new paylikeModule(this.service, data);
+    protected initialize(paylikeModule: DataCoreInstance, data: any, alternativeService: any = undefined): DataCoreClass {
+        return new paylikeModule(alternativeService || this.service, data);
     }
 
     /**
@@ -52,10 +53,11 @@ export default abstract class PaylikeCore {
      *
      * @param paylikeModule
      * @param list
+     * @param alternativeService
      */
-    initializeList(paylikeModule: DataCoreInstance, list: Array<any>): Array<DataCoreClass> {
+    initializeList(paylikeModule: DataCoreInstance, list: Array<any>, alternativeService: any): Array<DataCoreClass> {
         return list.map((data) => {
-            return new paylikeModule(this.service, data);
+            return this.initialize(paylikeModule, data, alternativeService)
         });
     }
 }
