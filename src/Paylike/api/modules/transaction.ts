@@ -35,8 +35,8 @@ class PaylikeTransaction extends PaylikeCoreData {
     /**
      * Synchronize the current transaction with Paylike.
      */
-    public update() {
-        this.merge(this.merchant.transactions.find(this.id).entry);
+    public update(): this {
+        return this.merge(this.merchant.transactions.find(this.id).entry);
     }
 
     /**
@@ -44,10 +44,9 @@ class PaylikeTransaction extends PaylikeCoreData {
      *
      * @param amount
      */
-    public void(amount: number) {
+    public void(amount: number): this {
         this.request('POST', this.buildPath('/voids'), { amount });
-        this.update();
-        return this;
+        return this.update();
     }
 
 }
