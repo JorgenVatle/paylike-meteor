@@ -51,7 +51,7 @@ declare module PaylikeGatewayApi {
         /**
          * Gateway cards
          */
-        module cards {
+        module card {
             module tokenize {
                 type input = card;
 
