@@ -38,4 +38,17 @@ export default class PaylikeUsers extends PaylikeCore {
             this.merchant
         )
     }
+
+    /**
+     * Build an array of users.
+     *
+     * @param query
+     */
+    fetch(query: PaylikeApi.PaginationQuery = { limit: 50 }) {
+        return this.initializeList(
+            PaylikeUser,
+            this.request('GET', this.path, query),
+            this.merchant
+        );
+    }
 }
