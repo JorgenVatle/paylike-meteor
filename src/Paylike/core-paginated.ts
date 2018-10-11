@@ -50,6 +50,6 @@ export default abstract class PaylikeCorePaginated extends PaylikeCore {
      * @param key
      */
     public find(value: string, key = this.primaryKey) {
-        return this.fetch().find((entry: any) => entry['key'].toLowerCase() === value.toLowerCase());
+        return this.fetch().find((entry: any) => entry[key].toLowerCase() === value.toLowerCase());
     }
 }
