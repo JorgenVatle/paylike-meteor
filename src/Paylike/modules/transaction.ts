@@ -15,6 +15,13 @@ class PaylikeTransaction extends PaylikeCoreData {
     protected merchant: PaylikeMerchant;
 
     /**
+     * Transaction base path.
+     */
+    protected get path() {
+        return `/transactions/${this.id}`;
+    }
+
+    /**
      * Paylike Transaction constructor.
      *
      * @param merchant
