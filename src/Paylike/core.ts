@@ -3,8 +3,8 @@ import PaylikeMerchant from "./modules/merchant";
 import PaylikeApp from "./modules/app";
 import PaylikeUser from "./modules/user";
 
-type DataCoreInstance = typeof PaylikeMerchant | typeof PaylikeApp | typeof PaylikeUser | any;
-type DataCoreClass = PaylikeMerchant | PaylikeApp | PaylikeUser;
+type CoreDataInstance = typeof PaylikeMerchant | typeof PaylikeApp | typeof PaylikeUser | any;
+type CoreDataClass = PaylikeMerchant | PaylikeApp | PaylikeUser;
 
 export default abstract class PaylikeCore {
 
@@ -45,7 +45,7 @@ export default abstract class PaylikeCore {
      * @param data
      * @param alternativeService
      */
-    protected initialize(paylikeModule: DataCoreInstance, data: any, alternativeService: any = undefined): DataCoreClass {
+    protected initialize(paylikeModule: CoreDataInstance, data: any, alternativeService: any = undefined): CoreDataClass {
         return new paylikeModule(alternativeService || this.service, data);
     }
 
@@ -56,7 +56,7 @@ export default abstract class PaylikeCore {
      * @param list
      * @param alternativeService
      */
-    initializeList(paylikeModule: DataCoreInstance, list: Array<any>, alternativeService: any): Array<DataCoreClass> {
+    initializeList(paylikeModule: CoreDataInstance, list: Array<any>, alternativeService: any): Array<CoreDataClass> {
         return list.map((data) => {
             return this.initialize(paylikeModule, data, alternativeService)
         });
