@@ -61,7 +61,7 @@ export default abstract class PaylikeCore {
      * @param list
      * @param alternativeService
      */
-    initializeList(paylikeModule: CoreDataInstance, list: Array<any>, alternativeService: any): Array<CoreDataClass> {
+    protected initializeList(paylikeModule: CoreDataInstance, list: Array<any>, alternativeService: any): Array<CoreDataClass> {
         return list.map((data) => {
             return this.initialize(paylikeModule, data, alternativeService)
         });
