@@ -180,6 +180,14 @@ declare module PaylikeApi {
             }
             type response = void;
         }
+
+        module refund {
+            interface input {
+                amount: number,
+                descriptor?: string,
+            }
+            type response = void;
+        }
     }
 
     /**
