@@ -1,7 +1,7 @@
 import PaylikeCore from "./core";
 import PaylikeService from "./service";
 
-export default abstract class PaylikeDataCore extends PaylikeCore {
+export default abstract class PaylikeCoreData extends PaylikeCore {
 
     /**
      * Paylike data core

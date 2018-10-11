@@ -1,4 +1,4 @@
-import PaylikeDataCore from "../core-data";
+import PaylikeCoreData from "../core-data";
 import PaylikeService from "../service";
 import PaylikeUsers from "./users";
 
@@ -8,7 +8,7 @@ interface PaylikeMerchant extends MerchantData {
     entry: MerchantData;
 }
 
-class PaylikeMerchant extends PaylikeDataCore {
+class PaylikeMerchant extends PaylikeCoreData {
 
     /**
      * PaylikeMerchant data.

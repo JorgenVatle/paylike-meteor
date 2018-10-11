@@ -1,5 +1,5 @@
 import PaylikeMerchant from "./merchant";
-import PaylikeDataCore from "../core-data";
+import PaylikeCoreData from "../core-data";
 
 interface UserData extends PaylikeApi.users.user {}
 
@@ -7,7 +7,7 @@ interface PaylikeUser extends UserData {
     entry: UserData;
 }
 
-class PaylikeUser extends PaylikeDataCore {
+class PaylikeUser extends PaylikeCoreData {
 
     /**
      * Merchant this user belongs to.

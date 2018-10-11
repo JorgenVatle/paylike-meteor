@@ -1,5 +1,5 @@
 import PaylikeCore from "./core";
-import PaylikeDataCore from "./core-data";
+import PaylikeCoreData from "./core-data";
 
 export interface Paginated {
     path: string,
@@ -23,7 +23,7 @@ export default abstract class PaylikeCorePaginated extends PaylikeCore implement
      * E.g. if `Merchants` extends this class, this value
      * would be `Merchant`.
      */
-    singularModule: PaylikeDataCore;
+    singularModule: PaylikeCoreData;
 
     /**
      * Build an array of users.
