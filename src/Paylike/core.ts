@@ -46,4 +46,16 @@ export default abstract class PaylikeCore {
     protected initialize(paylikeModule: DataCoreInstance, data: any): DataCoreClass {
         return new paylikeModule(this.service, data);
     }
+
+    /**
+     * Initialize a paginated list of Paylike entries.
+     *
+     * @param paylikeModule
+     * @param list
+     */
+    initializeList(paylikeModule: DataCoreInstance, list: Array<any>): Array<DataCoreClass> {
+        return list.map((data) => {
+            return new paylikeModule(this.service, data);
+        });
+    }
 }
