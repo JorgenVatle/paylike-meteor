@@ -52,4 +52,13 @@ describe('Paylike', function() {
             user.remove();
         }).to.not.throw;
     });
+
+    it('should fetch a list of users', function() {
+        const merchant = paylike.merchants.get(testData.merchant.id);
+        const users = merchant.users.fetch();
+
+        console.log(users);
+
+        assert.isAtLeast(users.length, 1);
+    });
 });
