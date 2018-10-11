@@ -91,4 +91,10 @@ describe('Paylike Gateway', function() {
         expect(payment.id).to.not.be.undefined;
     });
 
+    it('should tokenize a card', function() {
+        const card = gateway.tokenizeCard(testData.card.valid);
+
+        expect(card.id).to.not.be.undefined;
+    })
+
 });
