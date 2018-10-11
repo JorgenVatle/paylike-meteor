@@ -96,6 +96,12 @@ describe('Paylike Gateway', function() {
         const card = gateway.tokenizeCard(testData.card.valid);
 
         expect(card.id).to.not.be.undefined;
+    });
+
+    it('should throw an exception when you attempt to tokenize an invalid card', function() {
+        expect(() => {
+            gateway.tokenizeCard(testData.card.invalid);
+        }).to.throw('Paylike Gateway');
     })
 
 });
