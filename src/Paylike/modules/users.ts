@@ -41,7 +41,7 @@ export default class PaylikeUsers extends PaylikeCorePaginated {
 
         return <PaylikeUser>this.initialize(
             PaylikeUser,
-            {...this.fetch().find((user: PaylikeUser) => user.email === data.email), ...response},
+            {...this.find(data.email), ...response},
             this.merchant
         )
     }
