@@ -36,6 +36,14 @@ Example output:
 }
 ```
 
+#### [Add app](https://github.com/paylike/api-docs#fetch-current-app)
+This adds an app to the merchant you belong to.
+```js
+const newApp = paylike.currentApp.create({
+    name: 'my-new-app' // Optional
+});
+```
+
 ### [Merchants](https://github.com/paylike/api-docs#merchants)
 The Merchant object is responsible for a funding bank account as well as all of it's associated transactions. This is
 essentially a shop. It is important to note that all users and apps have complete access to their merchant. This
