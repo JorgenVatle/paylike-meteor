@@ -1,4 +1,3 @@
-import PaylikeUser from "./modules/user";
 import PaylikeCore from "./core";
 import PaylikeDataCore from "./core-data";
 
