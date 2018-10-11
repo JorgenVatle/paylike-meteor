@@ -91,6 +91,20 @@ describe('Paylike', function() {
 
         assert.equal(transaction.voidedAmount, 1337);
     });
+
+    it('should refund a transaction', function() {
+        const merchant = paylike.merchants.find(testData.merchant.id);
+        const payment = gateway.createPayment({
+            currency: "USD",
+            amount: 1337,
+            card: testData.card.valid,
+        });
+        const transaction = merchant.transactions.find(payment.id);
+
+        transaction.refund(1337);
+
+        assert.equal(transaction.refundedAmount, 1337);
+    })
 });
 
 describe('Paylike Gateway', function() {
