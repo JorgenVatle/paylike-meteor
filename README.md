@@ -109,6 +109,15 @@ acmeUser.revoke();
 acmeUser.delete();
 ```
 
+#### [Fetch all users](https://github.com/paylike/api-docs#fetch-all-users-on-a-merchant)
+```js
+myMerchant.users.fetch({
+    limit: 50,                      // optional - Defaults to 50.
+    before: 'user-id-goes-here',    // optional - Fetches all users before the given id.
+    after: 'user-id-goes-here',     // optional - Fetches all users after the given id.
+});
+```
+
 ## License
 This repository is licensed under the ISC license.
 
