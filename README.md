@@ -68,7 +68,7 @@ console.log(myMerchant.name) // "Acme Commerce"
 
 #### [Fetch a merchant](https://github.com/paylike/api-docs#fetch-a-merchant)
 ```js
-const myMerchant = paylike.merchants.get('some-merchant-id');
+const myMerchant = paylike.merchants.find('some-merchant-id');
 ```
 
 #### [Update a merchant](https://github.com/paylike/api-docs#update-a-merchant)

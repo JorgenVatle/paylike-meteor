@@ -28,7 +28,7 @@ class PaylikeMerchant extends PaylikeCoreData {
      */
     public update(params: PaylikeApi.merchants.update.input): PaylikeMerchant {
         this.request('PUT', this.path, params);
-        this.merge(this.service.merchants.get(this.id));
+        this.merge(this.service.merchants.find(this.id));
         return this;
     }
 

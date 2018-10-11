@@ -11,12 +11,12 @@ describe('Paylike', function() {
     });
 
     it('should fetch a merchant', function() {
-        const merchant = paylike.merchants.get(testData.merchant.id);
+        const merchant = paylike.merchants.find(testData.merchant.id);
         expect(merchant.id).to.not.be.undefined;
     });
 
     it('should update a merchant', function() {
-        const merchant = paylike.merchants.get(testData.merchant.update);
+        const merchant = paylike.merchants.find(testData.merchant.update);
 
         const state1 = merchant.update({ name: 'test-state1' });
         assert.equal(state1.name, 'test-state1');
@@ -27,7 +27,7 @@ describe('Paylike', function() {
 
     it('should add a user to a merchant', function() {
         this.timeout(5000);
-        const merchant = paylike.merchants.get(testData.merchant.users);
+        const merchant = paylike.merchants.find(testData.merchant.users);
         const email = 'steven@example.com';
 
         const user = merchant.users.invite({ email });
@@ -38,7 +38,7 @@ describe('Paylike', function() {
 
     it('should revoke a user from a merchant', function() {
         this.timeout(5000);
-        const merchant = paylike.merchants.get(testData.merchant.users);
+        const merchant = paylike.merchants.find(testData.merchant.users);
         const email = 'retired@example.com';
 
         const user = merchant.users.invite({ email });
@@ -52,14 +52,14 @@ describe('Paylike', function() {
     });
 
     it('should fetch a list of users', function() {
-        const merchant = paylike.merchants.get(testData.merchant.id);
+        const merchant = paylike.merchants.find(testData.merchant.id);
         const users = merchant.users.fetch();
 
         assert.isAtLeast(users.length, 1);
     });
 
     it('should fetch a list of apps', function() {
-        const merchant = paylike.merchants.get(testData.merchant.id);
+        const merchant = paylike.merchants.find(testData.merchant.id);
         const users = merchant.apps.fetch();
 
         assert.isAtLeast(users.length, 1);
