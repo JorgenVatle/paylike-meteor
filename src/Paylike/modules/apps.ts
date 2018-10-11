@@ -1,7 +1,7 @@
-import PaylikeCore from "../core";
 import PaylikeApp from "./app";
 import PaylikeMerchant from "./merchant";
 import PaylikeService from "../service";
+import PaylikeCore from "../core";
 
 export default class PaylikeApps extends PaylikeCore {
 
@@ -9,6 +9,13 @@ export default class PaylikeApps extends PaylikeCore {
      * Paylike merchant
      */
     public merchant: PaylikeMerchant;
+
+    /**
+     * Paylike apps path
+     */
+    public get path() {
+        return '/apps';
+    }
 
     /**
      * Paylike Apps constructor.
@@ -33,7 +40,7 @@ export default class PaylikeApps extends PaylikeCore {
     public create(app: PaylikeApi.apps.create.input): PaylikeApp {
         return <PaylikeApp>this.initialize(
             PaylikeApp,
-            this.request('POST', '/apps', app).app
+            this.request('POST', this.path, app).app
         )
     }
 
