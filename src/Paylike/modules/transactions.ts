@@ -9,6 +9,13 @@ export default class PaylikeTransactions extends PaylikeCorePaginated {
     protected merchant: PaylikeMerchant;
 
     /**
+     * Transactions path.
+     */
+    protected get path() {
+        return this.merchant.buildPath('/transactions');
+    }
+
+    /**
      * Paylike Transactions constructor.
      *
      * @param merchant
