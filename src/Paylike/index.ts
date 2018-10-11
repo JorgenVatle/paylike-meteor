@@ -1,4 +1,4 @@
-import PaylikeService from "./service";
+import PaylikeService from "./api/service";
 
 export default PaylikeService;
 
