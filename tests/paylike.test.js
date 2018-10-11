@@ -80,6 +80,7 @@ describe('Paylike', function() {
 });
 
 describe('Paylike Gateway', function() {
+    this.timeout(5000);
 
     it('should create a payment', function() {
         const payment = gateway.createPayment({
