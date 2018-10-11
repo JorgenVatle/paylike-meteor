@@ -1,6 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { expect, assert } from 'chai';
 import Paylike, { PaylikeGateway } from "../dist";
+import { transactions } from "../src/Paylike/api";
 
 const testData = JSON.parse(Assets.getText('tests/data.json'));
 const paylike = new Paylike(Meteor.settings.paylike.secret);
@@ -76,6 +77,20 @@ describe('Paylike', function() {
         const merchant = paylike.merchants.find(testData.merchant.id);
 
         assert.isAtLeast(merchant.transactions.fetch().length, 1);
+    });
+
+    it('should void a transaction', function() {
+        const merchant = paylike.merchants.find(testData.merchant.id);
+        const payment = gateway.createPayment({
+            currency: "EUR",
+            amount: 1337,
+            card: testData.card.valid,
+        });
+        const transaction = merchant.transactions.find(payment.id);
+
+        transaction.void(1337);
+
+        assert.equal(transaction.voidedAmount, 1337);
     });
 });
 
