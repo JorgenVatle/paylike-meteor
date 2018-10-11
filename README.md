@@ -80,7 +80,7 @@ remove additional apps and users.
 const acmeUser = myMerchant.users.invite({ email: 'steven@example.com' });
 
 console.log(acmeUser.id); // "5bbe8430882cf804f6112d9f"
-console.log(acmeUser.isMember); // "true"/"false" - Whether or not the created user was already in your merchant's users.
+console.log(acmeUser.isMember); // "true"/"false" - Whether or not the user was a member before creation.
 ```
 
 #### [Remove a user](https://github.com/paylike/api-docs#revoke-user-from-a-merchant)
