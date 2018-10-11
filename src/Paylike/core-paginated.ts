@@ -1,5 +1,4 @@
 import PaylikeCore, { CoreDataInstance } from "./core";
-import PaylikeUser from "./modules/user";
 
 export default abstract class PaylikeCorePaginated extends PaylikeCore {
 
