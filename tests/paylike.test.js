@@ -87,7 +87,7 @@ describe('Paylike', function() {
         });
         const transaction = merchant.transactions.find(payment.id);
 
-        transaction.void(1337);
+        transaction.void({ amount: 1337 });
 
         assert.equal(transaction.voidedAmount, 1337);
     });
@@ -101,7 +101,7 @@ describe('Paylike', function() {
         });
         const transaction = merchant.transactions.find(payment.id);
 
-        transaction.refund(1337);
+        transaction.refund({ amount: 1337 });
 
         assert.equal(transaction.refundedAmount, 1337);
     })

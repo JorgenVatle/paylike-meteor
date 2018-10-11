@@ -42,10 +42,10 @@ class PaylikeTransaction extends PaylikeCoreData {
     /**
      * Void the given amount from the current transaction.
      *
-     * @param amount
+     * @param data
      */
-    public void(amount: number): this {
-        this.request('POST', this.buildPath('/voids'), { amount });
+    public void(data: PaylikeApi.transactions.transactionVoid.input): this {
+        this.request('POST', this.buildPath('/voids'), data);
         return this.update();
     }
 
