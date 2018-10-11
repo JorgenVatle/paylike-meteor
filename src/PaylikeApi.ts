@@ -128,7 +128,7 @@ declare module PaylikeApi {
      */
     interface PaginationQuery {
         limit: string | number,
-        before: string,
-        after: string,
+        before?: string,
+        after?: string,
     }
 }
