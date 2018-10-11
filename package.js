@@ -18,7 +18,7 @@ Package.onUse(function(api) {
     api.versionsFrom('1.2');
     api.use('ecmascript');
     api.addAssets('package.js', 'server');
-    api.mainModule('dist/Paylike/index.js');
+    api.mainModule('dist/index.js');
 });
 
 Package.onTest(function(api) {
