@@ -125,6 +125,8 @@ declare module PaylikeApi {
 
     /**
      * Transactions
+     *
+     * @link https://github.com/paylike/api-docs#transactions
      */
     module transactions {
         interface card {
