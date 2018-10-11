@@ -1,6 +1,5 @@
 import PaylikeApp from "./app";
 import PaylikeMerchant from "./merchant";
-import PaylikeService from "../service";
 import PaylikeCorePaginated from "../core-paginated";
 
 export default class PaylikeApps extends PaylikeCorePaginated {
@@ -21,22 +20,17 @@ export default class PaylikeApps extends PaylikeCorePaginated {
      * Paylike apps path
      */
     public get path() {
-        return this.merchant && this.merchant.buildPath('/apps') || '/apps';
+        return this.merchant && this.merchant.buildPath('/apps');
     }
 
     /**
      * Paylike Apps constructor.
      *
-     * @param merchantOrService
+     * @param merchant
      */
-    public constructor(merchantOrService: PaylikeMerchant | PaylikeService) {
-        if (merchantOrService instanceof PaylikeService) {
-            super(merchantOrService);
-            return;
-        }
-
-        super(merchantOrService.service);
-        this.merchant = merchantOrService;
+    public constructor(merchant: PaylikeMerchant) {
+        super(merchant.service);
+        this.merchant = merchant;
     }
 
     /**
@@ -50,15 +44,4 @@ export default class PaylikeApps extends PaylikeCorePaginated {
             this.request('POST', this.path, app).app
         )
     }
-
-    /**
-     * Fetch current app
-     */
-    public get me(): PaylikeApp {
-        return <PaylikeApp>this.initialize(
-            PaylikeApp,
-            this.request('GET', '/me').identity
-        );
-    }
-
 }

@@ -1,7 +1,7 @@
 import { HTTP } from 'meteor/http';
 import PaylikeMerchants from "./modules/merchants";
 import { PackageDetails } from "./index";
-import PaylikeApps from "./modules/apps";
+import PaylikeCurrentApp from "./modules/current-app";
 import PaylikeApp from "./modules/app";
 
 export type HttpMethod = 'GET' | 'HEAD' | 'POST' | 'PUT' | 'DELETE' | 'TRACE' | 'OPTIONS' | 'CONNECT' | 'PATCH';
@@ -77,7 +77,7 @@ export default class PaylikeService {
      * Fetches the current app
      */
     public get me(): PaylikeApp {
-        return this.apps.me;
+        return this.currentApp.me;
     }
 
     /**
@@ -90,7 +90,7 @@ export default class PaylikeService {
     /**
      * Paylike apps class
      */
-    public get apps(): PaylikeApps {
-        return new PaylikeApps(this);
+    public get currentApp(): PaylikeCurrentApp {
+        return new PaylikeCurrentApp(this);
     }
 }
