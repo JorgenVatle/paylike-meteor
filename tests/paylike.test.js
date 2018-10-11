@@ -7,6 +7,8 @@ const paylike = new Paylike(Meteor.settings.paylike.secret);
 const gateway = new PaylikeGateway(Meteor.settings.paylike.public);
 
 describe('Paylike', function() {
+    this.timeout(5000);
+
     it('should grab the current app identity', function() {
         expect(paylike.me.id).to.not.be.undefined;
     });
@@ -27,7 +29,6 @@ describe('Paylike', function() {
     });
 
     it('should add a user to a merchant', function() {
-        this.timeout(5000);
         const merchant = paylike.merchants.find(testData.merchant.users);
         const email = 'steven@example.com';
 
@@ -38,7 +39,6 @@ describe('Paylike', function() {
     });
 
     it('should revoke a user from a merchant', function() {
-        this.timeout(5000);
         const merchant = paylike.merchants.find(testData.merchant.users);
         const email = 'retired@example.com';
 
