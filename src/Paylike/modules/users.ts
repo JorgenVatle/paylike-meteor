@@ -1,13 +1,18 @@
 import PaylikeMerchant from "./merchant";
-import PaylikeCore from "../core";
 import PaylikeUser from "./user";
+import PaylikeCorePaginated from "../core-paginated";
 
-export default class PaylikeUsers extends PaylikeCore {
+export default class PaylikeUsers extends PaylikeCorePaginated {
 
     /**
      * Paylike Merchant.
      */
     public merchant: PaylikeMerchant;
+
+    /**
+     * Single user
+     */
+    protected singularModule = PaylikeUser;
 
     /**
      * Paylike Merchant users constructor.
@@ -39,16 +44,4 @@ export default class PaylikeUsers extends PaylikeCore {
         )
     }
 
-    /**
-     * Build an array of users.
-     *
-     * @param query
-     */
-    public fetch(query: PaylikeApi.PaginationQuery = { limit: 50 }) {
-        return this.initializeList(
-            PaylikeUser,
-            this.request('GET', this.path, query),
-            this.merchant
-        );
-    }
 }
