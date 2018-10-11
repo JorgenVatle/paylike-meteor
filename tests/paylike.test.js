@@ -29,13 +29,11 @@ describe('Paylike', function() {
         this.timeout(5000);
         const merchant = paylike.merchants.get(testData.merchant.users);
         const email = 'steven@example.com';
-        const name = 'Steven';
 
-        const user = merchant.users.invite({ email, name });
+        const user = merchant.users.invite({ email });
 
         expect(user.id).to.not.be.undefined;
         assert.equal(user.email, email);
-        assert.equal(user.name, name);
     });
 
     it('should revoke a user from a merchant', function() {
