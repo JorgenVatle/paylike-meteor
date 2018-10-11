@@ -1,9 +1,11 @@
 import { Meteor } from 'meteor/meteor';
 import { expect, assert } from 'chai';
 import Paylike from "../dist/Paylike";
+import PaylikeGateway from "../dist/Paylike/gateway/gateway";
 
 const testData = JSON.parse(Assets.getText('tests/data.json'));
 const paylike = new Paylike(Meteor.settings.paylike.secret);
+const gateway = new PaylikeGateway(Meteor.settings.paylike.public);
 
 describe('Paylike', function() {
     it('should grab the current app identity', function() {
@@ -76,4 +78,18 @@ describe('Paylike', function() {
 
         assert.isAtLeast(merchant.transactions.fetch().length, 1);
     });
+});
+
+describe('Paylike Gateway', function() {
+
+    it('should create a payment', function() {
+        const payment = gateway.createPayment({
+            currency: "EUR",
+            amount: 1337,
+            card: testData.card.valid,
+        });
+
+        expect(payment.id).to.not.be.undefined;
+    });
+
 });
