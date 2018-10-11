@@ -174,6 +174,11 @@ declare module PaylikeApi {
             voidedAmount: number,
         }
 
+        /**
+         * Void a transaction
+         *
+         * @link https://github.com/paylike/api-docs#void-a-transaction
+         */
         module transactionVoid {
             interface input {
                 amount: number,
@@ -181,6 +186,11 @@ declare module PaylikeApi {
             type response = void;
         }
 
+        /**
+         * Refund a transaction
+         *
+         * @link https://github.com/paylike/api-docs#refund-a-transaction
+         */
         module refund {
             interface input {
                 amount: number,
@@ -189,6 +199,11 @@ declare module PaylikeApi {
             type response = void;
         }
 
+        /**
+         * Capture a transaction
+         *
+         * @link https://github.com/paylike/api-docs#capture-a-transaction
+         */
         module capture {
             interface input {
                 amount: number,
