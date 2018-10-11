@@ -1,6 +1,6 @@
 import { HTTP } from 'meteor/http';
 import PaylikeMerchants from "./modules/merchants";
-import { PackageDetails } from "./index";
+import { PackageDetails } from "../index";
 import PaylikeCurrentApp from "./modules/current-app";
 import PaylikeApp from "./modules/app";
 
