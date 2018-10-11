@@ -1,7 +1,19 @@
 import PaylikeMerchant from "./merchant";
-import PaylikeCore from "../core";
+import PaylikeCorePaginated from "../core-paginated";
 
-export default class PaylikeMerchants extends PaylikeCore {
+export default class PaylikeMerchants extends PaylikeCorePaginated {
+
+    /**
+     * Single Paylike merchant
+     */
+    protected singularModule = PaylikeMerchant;
+
+    /**
+     * Merchants path.
+     */
+    public get path() {
+        return '/merchants';
+    }
 
     /**
      * Fetch a merchant.
