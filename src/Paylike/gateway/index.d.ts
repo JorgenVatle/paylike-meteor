@@ -25,6 +25,9 @@ declare module PaylikeGatewayApi {
             merchant: boolean,
         }
 
+        /**
+         * Gateway Payments
+         */
         module payment {
             module create {
                 interface input {
@@ -45,6 +48,9 @@ declare module PaylikeGatewayApi {
             }
         }
 
+        /**
+         * Gateway cards
+         */
         module cards {
             module tokenize {
                 type input = card;
