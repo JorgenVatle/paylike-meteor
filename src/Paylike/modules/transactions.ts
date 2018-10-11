@@ -12,7 +12,7 @@ export default class PaylikeTransactions extends PaylikeCorePaginated {
     /**
      * Single transaction module.
      */
-    protected paylikeModule = PaylikeTransaction;
+    protected singularModule = PaylikeTransaction;
 
     /**
      * Transactions path.
