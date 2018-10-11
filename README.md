@@ -19,8 +19,11 @@ import Paylike from 'meteor/jorgenvatle:paylike';
 const paylike = new Paylike('your-api-key');
 ```
 
-### [Current app](https://github.com/paylike/api-docs#fetch-current-app)
-You can access your current app identity at any time through `paylike.me`.
+### [Apps](https://github.com/paylike/api-docs#fetch-current-app)
+An app belongs to a merchant and is used to perform actions on the attached merchant. Your API key is regarded as an
+app.
+
+#### [Current app](https://github.com/paylike/api-docs#fetch-current-app)
 ```js
 console.log(paylike.me);
 ```
