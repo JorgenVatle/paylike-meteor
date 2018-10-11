@@ -102,6 +102,16 @@ describe('Paylike Gateway', function() {
         expect(() => {
             gateway.tokenizeCard(testData.card.invalid);
         }).to.throw('Paylike Gateway');
-    })
+    });
+
+    it('should throw an exception when you create a payment with an invalid card', function() {
+        expect(() => {
+            gateway.createPayment({
+                currency: "EUR",
+                amount: 1337,
+                card: testData.card.invalid,
+            });
+        }).to.throw('Paylike Gateway');
+    });
 
 });
