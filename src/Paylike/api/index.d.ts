@@ -173,6 +173,13 @@ declare module PaylikeApi {
             test: boolean,
             voidedAmount: number,
         }
+
+        module transactionVoid {
+            interface input {
+                amount: number,
+            }
+            type response = void;
+        }
     }
 
     /**
