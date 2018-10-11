@@ -6,5 +6,16 @@
     "id": "5bbce49ed0dde36a097c3574",
     "update": "5bbce49ed0dde36a097c3574",
     "users": "5bbce49ed0dde36a097c3574"
+  },
+
+  "card": {
+    "valid": {
+      "number": "4100 0000 0000 0000",
+      "code": "137",
+      "expiry": {
+        "month": "13",
+        "year": "2037"
+      }
+    }
   }
 }
