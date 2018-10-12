@@ -167,21 +167,21 @@ const transaction = myMerchant.transactions.find('transaction-id-goes-here');
 
 #### [Capture a transaction](https://github.com/paylike/api-docs#capture-a-transaction)
 ```js
-cardTransaction.capture({
+transaction.capture({
     amount: 1337, // optional - Amount to capture. (defaults to reserved amount) 
 });
 ```
 
 #### [Void a transaction](https://github.com/paylike/api-docs#void-a-transaction)
 ```js
-cardTransaction.void({
+transaction.void({
     amount: 1337, // optional - Amount to void. (defaults to reserved amount) 
 });
 ```
 
 #### [Refund a transaction](https://github.com/paylike/api-docs#refund-a-transaction)
 ```js
-cardTransaction.refund({
+transaction.refund({
     amount: 1337, // optional - Amount to refund. (defaults to captured amount)
 });
 ```
