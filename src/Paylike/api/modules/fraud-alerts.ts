@@ -41,7 +41,7 @@ export default class PaylikeFraudAlerts extends PaylikeCorePaginated {
     public fetch(query: FraudPaginationQuery = { limit: 50 }) {
         return this._fetch({
             ...query,
-            filter: (query.filter || { merchantId: this.merchant.id })
+            filter: {...query.filter, merchantId: this.merchant.id}
         });
     }
 }
