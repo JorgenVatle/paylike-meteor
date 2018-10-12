@@ -215,6 +215,25 @@ declare module PaylikeApi {
     }
 
     /**
+     * Cards
+     *
+     * @link https://github.com/paylike/api-docs#cards
+     */
+    module cards {
+
+        interface card {
+            id: string,
+            merchantId: string,
+            created: string,
+            bin: string,
+            last4: string,
+            expiry: string,
+            scheme: string,
+        }
+
+    }
+
+    /**
      * Fraud alerts
      *
      * @link https://github.com/paylike/api-docs#fraud-alerts
