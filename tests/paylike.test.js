@@ -95,6 +95,7 @@ describe('Paylike', function() {
         });
         const transaction = merchant.transactions.find(payment.id);
 
+        transaction.capture();
         transaction.refund({ amount: 1337 });
 
         assert.equal(transaction.refundedAmount, 1337);
