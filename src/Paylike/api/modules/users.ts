@@ -1,13 +1,7 @@
-import PaylikeMerchant from "./merchant";
 import PaylikeUser from "./user";
-import PaylikeCorePaginated from "../core-paginated";
+import PaylikeMerchantCorePaginated from "../merchant-core-paginated";
 
-export default class PaylikeUsers extends PaylikeCorePaginated {
-
-    /**
-     * Paylike Merchant.
-     */
-    public merchant: PaylikeMerchant;
+export default class PaylikeUsers extends PaylikeMerchantCorePaginated {
 
     /**
      * Single user
@@ -18,16 +12,6 @@ export default class PaylikeUsers extends PaylikeCorePaginated {
      * Identifier to use when running `find()` calls.
      */
     protected primaryKey = 'email';
-
-    /**
-     * Paylike Merchant users constructor.
-     *
-     * @param merchant
-     */
-    constructor(merchant: PaylikeMerchant) {
-        super(merchant.service);
-        this.merchant = merchant;
-    }
 
     /**
      * Paylike Merchant users path.

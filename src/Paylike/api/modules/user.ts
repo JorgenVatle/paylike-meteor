@@ -1,5 +1,4 @@
-import PaylikeMerchant from "./merchant";
-import PaylikeCoreData from "../core-data";
+import PaylikeMerchantCoreData from "../merchant-core-data";
 
 interface UserData extends PaylikeApi.users.user {}
 
@@ -7,23 +6,7 @@ interface PaylikeUser extends UserData {
     entry: UserData;
 }
 
-class PaylikeUser extends PaylikeCoreData {
-
-    /**
-     * Merchant this user belongs to.
-     */
-    public merchant: PaylikeMerchant;
-
-    /**
-     * Paylike user constructor.
-     *
-     * @param merchant
-     * @param user
-     */
-    public constructor(merchant: PaylikeMerchant, user: UserData) {
-        super(merchant.service, user);
-        this.merchant = merchant;
-    }
+class PaylikeUser extends PaylikeMerchantCoreData {
 
     /**
      * User path URI.

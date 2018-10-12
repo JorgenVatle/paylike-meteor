@@ -1,5 +1,4 @@
-import PaylikeCoreData from "../core-data";
-import PaylikeMerchant from "./merchant";
+import PaylikeMerchantCoreData from "../merchant-core-data";
 
 interface TransactionData extends PaylikeApi.transactions.transaction {}
 
@@ -7,29 +6,13 @@ interface PaylikeTransaction extends TransactionData {
     entry: TransactionData;
 }
 
-class PaylikeTransaction extends PaylikeCoreData {
-
-    /**
-     * Paylike merchant.
-     */
-    protected merchant: PaylikeMerchant;
+class PaylikeTransaction extends PaylikeMerchantCoreData {
 
     /**
      * Transaction base path.
      */
     protected get path() {
         return `/transactions/${this.id}`;
-    }
-
-    /**
-     * Paylike Transaction constructor.
-     *
-     * @param merchant
-     * @param data
-     */
-    public constructor(merchant: PaylikeMerchant, data: any) {
-        super(merchant.service, data);
-        this.merchant = merchant;
     }
 
     /**

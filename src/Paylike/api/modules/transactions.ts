@@ -1,13 +1,7 @@
-import PaylikeCorePaginated from "../core-paginated";
-import PaylikeMerchant from "./merchant";
 import PaylikeTransaction from "./transaction";
+import PaylikeMerchantCorePaginated from "../merchant-core-paginated";
 
-export default class PaylikeTransactions extends PaylikeCorePaginated {
-
-    /**
-     * Paylike Merchant responsible these transactions.
-     */
-    protected merchant: PaylikeMerchant;
+export default class PaylikeTransactions extends PaylikeMerchantCorePaginated {
 
     /**
      * Single transaction module.
@@ -19,16 +13,6 @@ export default class PaylikeTransactions extends PaylikeCorePaginated {
      */
     protected get path() {
         return this.merchant.buildPath('/transactions');
-    }
-
-    /**
-     * Paylike Transactions constructor.
-     *
-     * @param merchant
-     */
-    public constructor(merchant: PaylikeMerchant) {
-        super(merchant.service);
-        this.merchant = merchant;
     }
 
     /**

@@ -1,17 +1,11 @@
-import PaylikeCorePaginated from "../core-paginated";
 import PaylikeFraudAlert from "./fraud-alert";
-import PaylikeMerchant from "./merchant";
+import PaylikeMerchantCorePaginated from "../merchant-core-paginated";
 
 interface FraudPaginationQuery extends PaylikeApi.PaginationQuery {
     filter?: PaylikeApi.FraudPaginationQuery['filter'];
 }
 
-export default class PaylikeFraudAlerts extends PaylikeCorePaginated {
-
-    /**
-     * Paylike Merchant
-     */
-    protected merchant: PaylikeMerchant;
+export default class PaylikeFraudAlerts extends PaylikeMerchantCorePaginated {
 
     /**
      * Fraud base path.
@@ -22,16 +16,6 @@ export default class PaylikeFraudAlerts extends PaylikeCorePaginated {
      * Single fraud entry class.
      */
     protected singularModule = PaylikeFraudAlert;
-
-    /**
-     * Fraud alerts constructor.
-     *
-     * @param merchant
-     */
-    constructor(merchant: PaylikeMerchant) {
-        super(merchant.service);
-        this.merchant = merchant;
-    }
 
     /**
      * Fetch a paginated list of fraud alerts.
