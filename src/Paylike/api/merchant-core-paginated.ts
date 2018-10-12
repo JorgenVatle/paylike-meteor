@@ -9,6 +9,11 @@ export default abstract class PaylikeMerchantCorePaginated extends PaylikeCorePa
     protected merchant: PaylikeMerchant;
 
     /**
+     * Alternative service.
+     */
+    protected alternativeService: PaylikeMerchant;
+
+    /**
      * Paylike Merchant Core Paginated constructor.
      *
      * @param merchant
@@ -16,6 +21,7 @@ export default abstract class PaylikeMerchantCorePaginated extends PaylikeCorePa
     constructor(merchant: PaylikeMerchant) {
         super(merchant.service);
         this.merchant = merchant;
+        this.alternativeService = this.merchant;
     }
 
 }
