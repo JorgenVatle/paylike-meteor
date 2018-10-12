@@ -160,6 +160,14 @@ const cardTransaction = myMerchant.transactions.create({
 });
 ```
 
+#### [Capture a transaction](https://github.com/paylike/api-docs#capture-a-transaction)
+Capture the reserved funds from a transaction.
+```js
+cardTransaction.capture({
+    amount: 1337, // optional - Amount to capture. (defaults to reserved amount) 
+});
+```
+
 ## License
 This repository is licensed under the ISC license.
 
