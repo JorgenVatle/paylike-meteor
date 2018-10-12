@@ -215,6 +215,29 @@ declare module PaylikeApi {
     }
 
     /**
+     * Fraud alerts
+     *
+     * @link https://github.com/paylike/api-docs#fraud-alerts
+     */
+    module fraud {
+
+        interface fraud {
+            id: string,
+            merchantId: string,
+            transactionId: string,
+            created: string,
+            reported: string | undefined,
+            reason: number | undefined,
+        }
+
+        interface get {
+            fraud: fraud,
+        }
+
+        type fetch = Array<fraud>
+    }
+
+    /**
      * Query parameters for pagination requests.
      */
     interface PaginationQuery {
