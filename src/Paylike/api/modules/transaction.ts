@@ -59,6 +59,16 @@ class PaylikeTransaction extends PaylikeCoreData {
         return this.update();
     }
 
+    /**
+     * Capture a transaction.
+     *
+     * @param data
+     */
+    public capture(data: PaylikeApi.transactions.capture.input): this {
+        this.request('POST', this.buildPath('/captures'), data);
+        return this.update();
+    }
+
 }
 
 export default PaylikeTransaction;
