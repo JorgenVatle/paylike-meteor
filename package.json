@@ -4,7 +4,8 @@
   "scripts": {
     "start": "start npm run build -- --watch & npm test",
     "test": "meteor test-packages ./ --settings settings.json --driver-package meteortesting:mocha",
-    "build": "tsc"
+    "build": "tsc",
+    "publish": "meteor publish"
   },
   "repository": {
     "type": "git",
