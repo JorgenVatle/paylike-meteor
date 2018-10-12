@@ -106,6 +106,19 @@ describe('Paylike', function() {
 
         assert.equal(transaction.refundedAmount, 1337);
     });
+
+    it('should store a card from a transaction', function() {
+        const payment = gateway.createPayment({
+            currency: "USD",
+            amount: 1337,
+            card: testData.card.valid,
+        });
+        const transaction = merchant.transactions.find(payment.id);
+        merchant.cards.save({
+            transactionId: transaction.id,
+            notes: 'paylike.test.js'
+        })
+    })
 });
 
 describe('Paylike Gateway', function() {
