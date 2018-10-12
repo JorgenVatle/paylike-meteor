@@ -7,6 +7,7 @@ const paylike = new Paylike(Meteor.settings.paylike.secret);
 const gateway = new PaylikeGateway(Meteor.settings.paylike.public);
 
 describe('Paylike', function() {
+    const merchant = paylike.merchants.current;
     this.timeout(5000);
 
     it('should grab the current app identity', function() {
@@ -14,13 +15,10 @@ describe('Paylike', function() {
     });
 
     it('should fetch a merchant', function() {
-        const merchant = paylike.merchants.find(testData.merchant.id);
         expect(merchant.id).to.not.be.undefined;
     });
 
     it('should update a merchant', function() {
-        const merchant = paylike.merchants.find(testData.merchant.update);
-
         const state1 = merchant.update({ name: 'test-state1' });
         assert.equal(state1.name, 'test-state1');
 
@@ -29,9 +27,7 @@ describe('Paylike', function() {
     });
 
     it('should add a user to a merchant', function() {
-        const merchant = paylike.merchants.find(testData.merchant.users);
         const email = 'steven@example.com';
-
         const user = merchant.users.invite({ email });
 
         expect(user.id).to.not.be.undefined;
@@ -39,9 +35,7 @@ describe('Paylike', function() {
     });
 
     it('should revoke a user from a merchant', function() {
-        const merchant = paylike.merchants.find(testData.merchant.users);
         const email = 'retired@example.com';
-
         const user = merchant.users.invite({ email });
 
         expect(user.id).to.not.be.undefined;
@@ -53,14 +47,12 @@ describe('Paylike', function() {
     });
 
     it('should fetch a list of users', function() {
-        const merchant = paylike.merchants.find(testData.merchant.id);
         const users = merchant.users.fetch();
 
         assert.isAtLeast(users.length, 1);
     });
 
     it('should fetch a list of apps', function() {
-        const merchant = paylike.merchants.find(testData.merchant.id);
         const users = merchant.apps.fetch();
 
         assert.isAtLeast(users.length, 1);
@@ -73,13 +65,10 @@ describe('Paylike', function() {
     });
 
     it('should fetch a list of transactions', function() {
-        const merchant = paylike.merchants.find(testData.merchant.id);
-
         assert.isAtLeast(merchant.transactions.fetch().length, 1);
     });
 
     it('should void a transaction', function() {
-        const merchant = paylike.merchants.find(testData.merchant.id);
         const payment = gateway.createPayment({
             currency: "EUR",
             amount: 1337,
@@ -93,7 +82,6 @@ describe('Paylike', function() {
     });
 
     it('should refund a transaction', function() {
-        const merchant = paylike.merchants.find(testData.merchant.id);
         const payment = gateway.createPayment({
             currency: "USD",
             amount: 1337,
