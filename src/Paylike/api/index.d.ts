@@ -245,4 +245,14 @@ declare module PaylikeApi {
         before?: string,
         after?: string,
     }
+
+    /**
+     * Query parameters for fraud pagination requests.
+     */
+    interface FraudPaginationQuery extends PaginationQuery {
+        filter: {
+            merchantId: string,
+            transactionId?: string,
+        },
+    }
 }
