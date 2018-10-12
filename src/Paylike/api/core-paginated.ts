@@ -69,11 +69,7 @@ export default abstract class PaylikeCorePaginated extends PaylikeCore {
      * @param responseKey
      */
     protected findByPath(path: string, responseKey: string) {
-        return this.initialize(
-            this.singularModule,
-            this.service.request('GET', path)[responseKey],
-            this.alternativeService
-        )
+        return this.initializeSingle(this.service.request('GET', path)[responseKey])
     }
 
     /**
