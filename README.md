@@ -231,7 +231,7 @@ Add your Paylike credentials to `settings.json` (See `settings.example.json` for
 
 Use `npm start` to start _both_ the TypeScript build watcher and the test watcher.
 
-##### Alternatively:
+#### Alternatively, start watchers individually
 Use `npm test` to start _just_ the test watcher.
 
 Use `npm run build -- --watch` to start _just_ the TypeScript build watcher.
