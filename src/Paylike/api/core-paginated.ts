@@ -31,11 +31,20 @@ export default abstract class PaylikeCorePaginated extends PaylikeCore {
     protected primaryKey: string = 'id';
 
     /**
-     * Build an array of users.
+     * Send a fetch request to the pagination endpoint.
      *
      * @param query
      */
     public fetch(query: PaylikeApi.PaginationQuery = { limit: 50 }) {
+        return this._fetch(query);
+    }
+
+    /**
+     * Build an array of module instances from the current pagination endpoint.
+     *
+     * @param query
+     */
+    protected _fetch(query: PaylikeApi.PaginationQuery | PaylikeApi.FraudPaginationQuery) {
         return this.initializeList(
             this.singularModule,
             this.request('GET', this.paginationPath || this.path, query),
