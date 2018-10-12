@@ -27,10 +27,8 @@ export default class PaylikeMerchants extends PaylikeCorePaginated {
      * @param merchantId
      */
     public find(merchantId: string): PaylikeMerchant {
-        return <PaylikeMerchant>this.initialize(
-            PaylikeMerchant,
-            this.service.request('GET', this.buildPath(`/${merchantId}`)).merchant,
-        )
+        return <PaylikeMerchant>
+            this.findByPath(this.buildPath(merchantId), 'merchant');
     }
 
     /**
