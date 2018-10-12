@@ -62,6 +62,18 @@ describe('Paylike', function() {
         }).to.not.throw;
     });
 
+    it('should capture a transaction', function() {
+        const payment = gateway.createPayment({
+            currency: "EUR",
+            amount: 1337,
+            card: testData.card.valid,
+        });
+        const transaction = merchant.transactions.find(payment.id);
+        transaction.capture({ amount: 1337 });
+
+        assert.equal(transaction.capturedAmount, 1337);
+    });
+
     it('should void a transaction', function() {
         const payment = gateway.createPayment({
             currency: "EUR",
