@@ -122,7 +122,22 @@ describe('Paylike', function() {
         });
 
         expect(card.id).to.not.be.undefined;
-    })
+    });
+
+    it('should fetch a card by id', function() {
+        const authorization = gateway.createPayment({
+            currency: "USD",
+            amount: 1337,
+            card: testData.card.valid,
+        });
+
+        const card = merchant.cards.save({
+            transactionId: merchant.transactions.find(authorization.id).id,
+            notes: 'paylike.test.js'
+        });
+
+        expect(merchant.cards.find(card.id).scheme).to.not.be.undefined;
+    });
 });
 
 describe('Paylike Gateway', function() {
