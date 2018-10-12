@@ -25,6 +25,7 @@ jobs:
         - 'node_modules'
 
     - run: echo $METEOR_SETTINGS > settings.json
+    - run: echo $METEOR_SESSIONS > meteor_session.json
     - run: npm run build
     - run: npm test -- --once
     - deploy: npm run publish
