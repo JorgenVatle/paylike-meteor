@@ -113,11 +113,13 @@ describe('Paylike', function() {
             amount: 1337,
             card: testData.card.valid,
         });
-        const transaction = merchant.transactions.find(payment.id);
-        merchant.cards.save({
-            transactionId: transaction.id,
+
+        const card = merchant.cards.save({
+            transactionId: payment.id,
             notes: 'paylike.test.js'
-        })
+        });
+
+        expect(card.id).to.not.be.undefined;
     })
 });
 
