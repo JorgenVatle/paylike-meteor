@@ -28,4 +28,6 @@ jobs:
     - run: echo $METEOR_SESSIONS > meteor_session.json
     - run: npm run build
     - run: npm test -- --once
-    - deploy: npm run publish
+
+    - deploy:
+        command: npm run publish
