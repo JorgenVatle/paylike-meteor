@@ -222,6 +222,18 @@ const alerts = myMerchant.fraudAlerts.fetch({
 const alert = myMerchant.fraudAlerts.find('alert-id-goes-here');
 ```
 
+## Contributing
+Pull requests are more than welcome!
+If you're adding a feature, please include tests for it.
+
+To get the development environment going, add your Paylike credentials to `settings.json` (See `settings.example.json`
+for an example) Then you can start both the Typescript build watcher and test watcher using `npm start`.
+
+Use `npm test` to start just the test watcher.
+
+Use `npm run build -- --watch` to start the TypeScript build watcher.
+
+
 ## License
 This repository is licensed under the ISC license.
 
