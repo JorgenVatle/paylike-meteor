@@ -180,13 +180,22 @@ declare module PaylikeApi {
          * @link https://github.com/paylike/api-docs#create-a-transaction
          */
         module create {
-            interface input {
-                transactionId: string,
+            interface inputData {
                 descriptor?: string,
                 currency: string,
                 amount: number,
                 custom: any,
             }
+
+            interface usingCard extends inputData {
+                cardId: string,
+            }
+
+            interface usingTransaction extends inputData {
+                transactionId: string,
+            }
+
+            type input = usingCard | usingTransaction;
 
             interface response {
                 transaction: {
