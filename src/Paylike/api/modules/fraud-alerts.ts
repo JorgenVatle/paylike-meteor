@@ -2,6 +2,10 @@ import PaylikeCorePaginated from "../core-paginated";
 import PaylikeFraudAlert from "./fraud-alert";
 import PaylikeMerchant from "./merchant";
 
+interface FraudPaginationQuery extends PaylikeApi.PaginationQuery {
+    filter?: PaylikeApi.FraudPaginationQuery['filter'];
+}
+
 export default class PaylikeFraudAlerts extends PaylikeCorePaginated {
 
     /**
@@ -34,7 +38,10 @@ export default class PaylikeFraudAlerts extends PaylikeCorePaginated {
      *
      * @param query
      */
-    public fetch(query: PaylikeApi.FraudPaginationQuery) {
-        return this._fetch(query);
+    public fetch(query: FraudPaginationQuery = { limit: 50 }) {
+        return this._fetch({
+            ...query,
+            filter: (query.filter || { merchantId: this.merchant.id })
+        });
     }
 }
