@@ -186,6 +186,23 @@ transaction.refund({
 });
 ```
 
+### [Cards](https://github.com/paylike/api-docs#cards)
+Cards saved using the [Web SDK](https://github.com/paylike/sdk) are already in your vault and doesn't need to be saved
+on the backend.
+
+#### [Save a card using a transaction](https://github.com/paylike/api-docs#save-a-card)
+```js
+const card = myMerchant.cards.save({
+    transactionId: 'id-of-a-previous-transaction',  // required - Needs to be a valid transaction ID.
+    notes: 'Some notes about this card',            // optional
+});
+```
+
+#### [Fetch a card](https://github.com/paylike/api-docs#fetch-a-card)
+```js
+const card = myMerchant.cards.find('card-id-goes-here');
+```
+
 ## License
 This repository is licensed under the ISC license.
 
