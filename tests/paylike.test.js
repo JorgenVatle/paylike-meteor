@@ -108,14 +108,16 @@ describe('Paylike', function() {
     });
 
     it('should store a card from a transaction', function() {
-        const payment = gateway.createPayment({
+        const authorization = gateway.createPayment({
             currency: "USD",
             amount: 1337,
             card: testData.card.valid,
         });
+        const transaction = merchant.transactions.find(authorization.id);
+        transaction.capture();
 
         const card = merchant.cards.save({
-            transactionId: payment.id,
+            transactionId: transaction.id,
             notes: 'paylike.test.js'
         });
 
