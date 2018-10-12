@@ -4,6 +4,7 @@ import PaylikeUsers from "./users";
 import PaylikeApps from "./apps";
 import PaylikeTransactions from "./transactions";
 import PaylikeFraudAlerts from "./fraud-alerts";
+import PaylikeCards from "./cards";
 
 interface MerchantData extends PaylikeApi.merchants.merchant {}
 
@@ -46,6 +47,13 @@ class PaylikeMerchant extends PaylikeCoreData {
      */
     public get users(): PaylikeUsers {
         return new PaylikeUsers(this);
+    }
+
+    /**
+     * Merchant cards.
+     */
+    public get cards(): PaylikeCards {
+        return new PaylikeCards(this);
     }
 
     /**
