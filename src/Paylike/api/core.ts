@@ -2,9 +2,10 @@ import PaylikeService, { HttpMethod } from "./service";
 import PaylikeMerchant from "./modules/merchant";
 import PaylikeApp from "./modules/app";
 import PaylikeUser from "./modules/user";
+import PaylikeCard from "./modules/card";
 
-export type CoreDataInstance = typeof PaylikeMerchant | typeof PaylikeApp | typeof PaylikeUser | any;
-export type CoreDataClass = PaylikeMerchant | PaylikeApp | PaylikeUser;
+export type CoreDataInstance = typeof PaylikeMerchant | typeof PaylikeApp | typeof PaylikeUser | typeof PaylikeCard | any;
+export type CoreDataClass = PaylikeMerchant | PaylikeApp | PaylikeUser | PaylikeCard;
 
 export default abstract class PaylikeCore {
 
