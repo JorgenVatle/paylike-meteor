@@ -174,6 +174,13 @@ cardTransaction.void({
 });
 ```
 
+#### [Refund a transaction](https://github.com/paylike/api-docs#refund-a-transaction)
+```js
+cardTransaction.refund({
+    amount: 1337, // optional - Amount to refund. (defaults to captured amount)
+});
+```
+
 ## License
 This repository is licensed under the ISC license.
 
