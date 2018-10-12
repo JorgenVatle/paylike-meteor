@@ -44,7 +44,7 @@ class PaylikeTransaction extends PaylikeCoreData {
      *
      * @param data
      */
-    public void(data: PaylikeApi.transactions.transactionVoid.input): this {
+    public void(data: PaylikeApi.transactions.transactionVoid.input = { amount: this.pendingAmount }): this {
         this.request('POST', this.buildPath('/voids'), data);
         return this.update();
     }
@@ -54,7 +54,7 @@ class PaylikeTransaction extends PaylikeCoreData {
      *
      * @param data
      */
-    public refund(data: PaylikeApi.transactions.refund.input): this {
+    public refund(data: PaylikeApi.transactions.refund.input = { amount: this.capturedAmount }): this {
         this.request('POST', this.buildPath('refunds'), data);
         return this.update();
     }
@@ -64,7 +64,7 @@ class PaylikeTransaction extends PaylikeCoreData {
      *
      * @param data
      */
-    public capture(data: PaylikeApi.transactions.capture.input): this {
+    public capture(data: PaylikeApi.transactions.capture.input = { amount: this.pendingAmount }): this {
         this.request('POST', this.buildPath('/captures'), data);
         return this.update();
     }
