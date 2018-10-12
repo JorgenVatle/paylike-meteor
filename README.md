@@ -160,6 +160,11 @@ const cardTransaction = myMerchant.transactions.create({
 });
 ```
 
+#### [Fetch a transaction](https://github.com/paylike/api-docs#fetch-a-transaction)
+```js
+const transaction = myMerchant.transactions.find('transaction-id-goes-here');
+```
+
 #### [Capture a transaction](https://github.com/paylike/api-docs#capture-a-transaction)
 ```js
 cardTransaction.capture({
