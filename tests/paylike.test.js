@@ -18,6 +18,22 @@ describe('Paylike', function() {
         expect(merchant.id).to.not.be.undefined;
     });
 
+    it('should fetch a list of users', function() {
+        assert.isAtLeast(merchant.users.fetch().length, 1);
+    });
+
+    it('should fetch a list of apps', function() {
+        assert.isAtLeast(merchant.apps.fetch().length, 1);
+    });
+
+    it('should fetch a list of merchants', function() {
+        assert.isAtLeast(paylike.merchants.fetch().length, 1);
+    });
+
+    it('should fetch a list of transactions', function() {
+        assert.isAtLeast(merchant.transactions.fetch().length, 1);
+    });
+
     it('should update a merchant', function() {
         const state1 = merchant.update({ name: 'test-state1' });
         assert.equal(state1.name, 'test-state1');
@@ -46,28 +62,6 @@ describe('Paylike', function() {
         }).to.not.throw;
     });
 
-    it('should fetch a list of users', function() {
-        const users = merchant.users.fetch();
-
-        assert.isAtLeast(users.length, 1);
-    });
-
-    it('should fetch a list of apps', function() {
-        const users = merchant.apps.fetch();
-
-        assert.isAtLeast(users.length, 1);
-    });
-
-    it('should fetch a list of merchants', function() {
-        const merchants = paylike.merchants.fetch();
-
-        assert.isAtLeast(merchants.length, 1);
-    });
-
-    it('should fetch a list of transactions', function() {
-        assert.isAtLeast(merchant.transactions.fetch().length, 1);
-    });
-
     it('should void a transaction', function() {
         const payment = gateway.createPayment({
             currency: "EUR",
@@ -92,7 +86,7 @@ describe('Paylike', function() {
         transaction.refund({ amount: 1337 });
 
         assert.equal(transaction.refundedAmount, 1337);
-    })
+    });
 });
 
 describe('Paylike Gateway', function() {
