@@ -207,8 +207,8 @@ declare module PaylikeApi {
         module capture {
             interface input {
                 amount: number,
-                currency: CurrencyCode,
-                descriptor: string,
+                currency?: CurrencyCode,
+                descriptor?: string,
             }
             type response = void;
         }
