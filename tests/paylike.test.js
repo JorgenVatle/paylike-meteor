@@ -34,6 +34,12 @@ describe('Paylike', function() {
         assert.isAtLeast(merchant.transactions.fetch().length, 1);
     });
 
+    it('should fetch a list of fraud alerts', function() {
+        expect(() => {
+            merchant.fraudAlerts.fetch()
+        }).to.not.throw('Paylike');
+    });
+
     it('should update a merchant', function() {
         const state1 = merchant.update({ name: 'test-state1' });
         assert.equal(state1.name, 'test-state1');
