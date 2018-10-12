@@ -136,6 +136,30 @@ myMerchant.users.fetch({
 });
 ```
 
+### [Transactions](https://github.com/paylike/api-docs#transactions)
+A transaction, or reservation, defines an amount of funds authorized for captures, refunds and voids.
+
+#### [Create a transaction](https://github.com/paylike/api-docs#create-a-transaction)
+```js
+const details = {
+    currency: 'EUR',            // required - Currency
+    amount: 1337,               // required - Amount of funds to reserve.
+    descriptor: 'test-payment', // optional - Descriptor to show up on bank statement 
+};
+
+// Use the card associated with a previous transaction:
+const transaction = myMerchant.transactions.create({
+    transactionId: 'id-of-a-previous-transaction',  // required - Needs to be a valid transaction ID.
+    ...details,
+});
+
+// ... Or use a saved card:
+const cardTransaction = myMerchant.transactions.create({
+    cardId: 'card-id-goes-here',
+    ...details,
+});
+```
+
 ## License
 This repository is licensed under the ISC license.
 
