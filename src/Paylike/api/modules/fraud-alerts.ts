@@ -13,4 +13,12 @@ export default class PaylikeFraudAlerts extends PaylikeCorePaginated {
      */
     protected singularModule = PaylikeFraudAlert;
 
+    /**
+     * Fetch a paginated list of fraud alerts.
+     *
+     * @param query
+     */
+    public fetch(query: PaylikeApi.FraudPaginationQuery) {
+        return this._fetch(query);
+    }
 }
