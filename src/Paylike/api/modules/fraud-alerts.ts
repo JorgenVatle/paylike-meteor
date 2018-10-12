@@ -1,7 +1,7 @@
 import PaylikeCorePaginated from "../core-paginated";
-import PaylikeFraud from "./fraud";
+import PaylikeFraudAlert from "./fraud-alert";
 
-export default class PaylikeFrauds extends PaylikeCorePaginated {
+export default class PaylikeFraudAlerts extends PaylikeCorePaginated {
 
     /**
      * Fraud base path.
@@ -11,6 +11,6 @@ export default class PaylikeFrauds extends PaylikeCorePaginated {
     /**
      * Single fraud entry class.
      */
-    protected singularModule = PaylikeFraud;
+    protected singularModule = PaylikeFraudAlert;
 
 }
