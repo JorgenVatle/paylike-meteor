@@ -231,6 +231,23 @@ declare module PaylikeApi {
             scheme: string,
         }
 
+        /**
+         * Save a card
+         *
+         * @link https://github.com/paylike/api-docs#save-a-card
+         */
+        module save {
+            interface input {
+                transactionId: string,
+                notes?: string,
+            }
+            interface response {
+                card: {
+                    id: string,
+                }
+            }
+        }
+
     }
 
     /**
