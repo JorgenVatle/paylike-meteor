@@ -13,4 +13,13 @@ export default class PaylikeCards extends PaylikeMerchantCorePaginated {
      */
     protected singularModule = PaylikeCard;
 
+    /**
+     * Fetch a single card by ID.
+     *
+     * @param cardId
+     */
+    public find(cardId: string): PaylikeCard {
+        return <PaylikeCard>this.findByPath(this.buildPath(cardId), 'card');
+    }
+
 }
