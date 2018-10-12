@@ -203,6 +203,25 @@ const card = myMerchant.cards.save({
 const card = myMerchant.cards.find('card-id-goes-here');
 ```
 
+### [Fraud alerts](https://github.com/paylike/api-docs#fraud-alerts)
+
+#### [Fetch all fraud alerts](https://github.com/paylike/api-docs#search-fraud-alerts)
+```js
+const alerts = myMerchant.fraudAlerts.fetch({
+    limit: 50,                      // optional - limit the alert count. (defaults to 50)
+    before: 'alert-id-goes-here',   // optional - Fetches all users before the given id.
+    after: 'alert-id-goes-here',    // optional - Fetches all users after the given id.
+    filter: {
+        transactionId: 'some-id'    // optional - Fetch alerts only for the given transaction.
+    }
+});
+```
+
+#### [Fetch an alert](https://github.com/paylike/api-docs#fetch-a-fraud-alert)
+```js
+const alert = myMerchant.fraudAlerts.find('alert-id-goes-here');
+```
+
 ## License
 This repository is licensed under the ISC license.
 
