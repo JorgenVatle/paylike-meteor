@@ -49,6 +49,13 @@ The Merchant object is responsible for a funding bank account as well as all of 
 essentially a shop. It is important to note that all users and apps have complete access to their merchant. This
 includes inviting and removing users.
 
+#### [Current merchant](https://github.com/paylike/api-docs#fetch-all-merchants)
+```js
+const merchant = paylike.merchants.current;
+
+console.log(merchant.name) // "My Online Shop"
+```
+
 #### [Create a merchant](https://github.com/paylike/api-docs#create-a-merchant)
 ```js
 const myMerchant = paylike.merchants.create({
@@ -89,11 +96,6 @@ const merchants = paylike.merchants.fetch({
     before: 'merchant-id-goes-here',    // optional - Fetches all merchants before the given id.
     after: 'merchant-id-goes-here',     // optional - Fetches all merchants after the given id.
 });
-```
-
-#### [Get the current merchant](https://github.com/paylike/api-docs#fetch-all-merchants)
-```js
-const merchant = paylike.merchants.current;
 ```
 
 ### [Merchant's Users](https://github.com/paylike/api-docs#merchants-users)
