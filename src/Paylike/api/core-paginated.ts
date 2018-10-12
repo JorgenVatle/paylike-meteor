@@ -75,4 +75,13 @@ export default abstract class PaylikeCorePaginated extends PaylikeCore {
             this.alternativeService
         )
     }
+
+    /**
+     * Initialize our singular module.
+     *
+     * @param data
+     */
+    protected initializeSingle(data: any) {
+        return this.initialize(this.singularModule, data, this.alternativeService);
+    }
 }
