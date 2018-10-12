@@ -167,6 +167,13 @@ cardTransaction.capture({
 });
 ```
 
+#### [Void a transaction](https://github.com/paylike/api-docs#void-a-transaction)
+```js
+cardTransaction.void({
+    amount: 1337, // optional - Amount to void. (defaults to reserved amount) 
+});
+```
+
 ## License
 This repository is licensed under the ISC license.
 
