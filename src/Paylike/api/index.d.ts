@@ -175,6 +175,27 @@ declare module PaylikeApi {
         }
 
         /**
+         * Create a transaction
+         *
+         * @link https://github.com/paylike/api-docs#create-a-transaction
+         */
+        module create {
+            interface input {
+                transactionId: string,
+                descriptor?: string,
+                currency: string,
+                amount: number,
+                custom: any,
+            }
+
+            interface response {
+                transaction: {
+                    id: string,
+                }
+            }
+        }
+
+        /**
          * Void a transaction
          *
          * @link https://github.com/paylike/api-docs#void-a-transaction
