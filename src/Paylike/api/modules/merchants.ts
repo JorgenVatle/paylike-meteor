@@ -1,5 +1,6 @@
 import PaylikeMerchant from "./merchant";
 import PaylikeCorePaginated from "../core-paginated";
+import PaylikeApp from "./app";
 
 export default class PaylikeMerchants extends PaylikeCorePaginated {
 
@@ -42,5 +43,16 @@ export default class PaylikeMerchants extends PaylikeCorePaginated {
             PaylikeMerchant,
             this.service.request('POST', this.path, merchant).merchant
         );
+    }
+
+    /**
+     * Current merchant.
+     */
+    public get current(): PaylikeMerchant {
+        const me = this.service.me;
+        return <PaylikeMerchant>
+            this.fetch().find((merchant: PaylikeMerchant) => {
+                return !!merchant.apps.fetch().find((app: PaylikeApp) => app.id === me.id);
+            });
     }
 }
