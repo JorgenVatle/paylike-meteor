@@ -31,4 +31,6 @@ jobs:
     - run: npm test -- --once
 
     - deploy:
-        command: npm run publish
+        command: |
+          rm -rf node_modules
+          npm run publish
