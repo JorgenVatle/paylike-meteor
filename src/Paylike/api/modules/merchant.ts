@@ -3,6 +3,7 @@ import PaylikeService from "../service";
 import PaylikeUsers from "./users";
 import PaylikeApps from "./apps";
 import PaylikeTransactions from "./transactions";
+import PaylikeFraudAlerts from "./fraud-alerts";
 
 interface MerchantData extends PaylikeApi.merchants.merchant {}
 
@@ -34,7 +35,7 @@ class PaylikeMerchant extends PaylikeCoreData {
     }
 
     /**
-     * Merchant path URI
+     * Merchant path URI.
      */
     public get path(): string {
         return `/merchants/${this.entry.id}`;
@@ -48,17 +49,24 @@ class PaylikeMerchant extends PaylikeCoreData {
     }
 
     /**
-     * Merchant apps
+     * Merchant apps.
      */
     public get apps(): PaylikeApps {
         return new PaylikeApps(this);
     }
 
     /**
-     * Merchant transactions
+     * Merchant transactions.
      */
     public get transactions(): PaylikeTransactions {
         return new PaylikeTransactions(this);
+    }
+
+    /**
+     * Merchant fraud alerts.
+     */
+    public get fraudAlerts(): PaylikeFraudAlerts {
+        return new PaylikeFraudAlerts(this);
     }
 
 }
