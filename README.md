@@ -223,9 +223,10 @@ const alert = myMerchant.fraudAlerts.find('alert-id-goes-here');
 ```
 
 ## Contributing
-Pull requests are more than welcome!
-If you're adding a feature, please include tests for it.
+Pull requests are more than welcome! When adding new features, going through the effort to include tests for them is
+greatly appreciated.
 
+#### Starting the development environment
 To get the development environment going, add your Paylike credentials to `settings.json` (See `settings.example.json`
 for an example) Then you can start both the Typescript build watcher and test watcher using `npm start`.
 
