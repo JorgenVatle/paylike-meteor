@@ -25,4 +25,13 @@ export default class PaylikeTransactions extends PaylikeMerchantCorePaginated {
             this.findByPath(`/transactions/${transactionId}`, 'transaction');
     }
 
+    /**
+     * Create a transaction.
+     *
+     * @param transaction
+     */
+    create(transaction: PaylikeApi.transactions.create.input): PaylikeTransaction {
+        const request: PaylikeApi.transactions.create.response = this.request('POST', this.path, transaction);
+        return this.find(request.transaction.id);
+    }
 }
