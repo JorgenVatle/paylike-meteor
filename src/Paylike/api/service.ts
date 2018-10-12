@@ -43,7 +43,7 @@ export default class PaylikeService {
      * @param message
      * @param metadata
      */
-    public exception(message: string, metadata: any) {
+    public exception(message: string, metadata?: any) {
         return new Meteor.Error('Paylike', message, metadata);
     }
 
