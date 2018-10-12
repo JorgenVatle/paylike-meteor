@@ -26,6 +26,7 @@ jobs:
 
     - run: echo $METEOR_SETTINGS > settings.json
     - run: echo $METEOR_SESSIONS > meteor_session.json
+    - run: export METEOR_SESSION_FILE=/home/repo/meteor_session.json
     - run: npm run build
     - run: npm test -- --once
 
