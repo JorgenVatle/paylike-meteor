@@ -91,6 +91,11 @@ const merchants = paylike.merchants.fetch({
 });
 ```
 
+#### [Get the current merchant](https://github.com/paylike/api-docs#fetch-all-merchants)
+```js
+const merchant = paylike.merchants.current;
+```
+
 ### [Merchant's Users](https://github.com/paylike/api-docs#merchants-users)
 A merchant can have several users attached. These have complete access to their respective merchant and can add and
 remove additional apps and users.
