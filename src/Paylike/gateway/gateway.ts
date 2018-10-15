@@ -23,7 +23,7 @@ export default class PaylikeGateway {
      */
     public constructor(
         publicKey: string = settings.public,
-        url: string = 'https://gateway.paylike.io'
+        url: string = settings.gatewayUrl || 'https://gateway.paylike.io'
     ) {
         this.api = { publicKey, url }
     }
