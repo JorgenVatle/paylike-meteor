@@ -1,5 +1,7 @@
 .idea
 dist
 node_modules
+
+.circleci/run.cmd
 package-lock.json
 settings.json
