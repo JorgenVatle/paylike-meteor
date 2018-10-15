@@ -1,3 +1,4 @@
+import { Meteor } from 'meteor/meteor';
 import { HTTP } from "meteor/http";
 import { HttpMethod } from "../api/service";
 import Helpers from "../helpers";
@@ -18,7 +19,10 @@ export default class PaylikeGateway {
      * @param publicKey
      * @param url
      */
-    public constructor(publicKey: string, url: string = 'https://gateway.paylike.io') {
+    public constructor(
+        publicKey: string = Helpers.settings.public,
+        url: string = Helpers.settings.gatewayUrl || 'https://gateway.paylike.io'
+    ) {
         this.api = { publicKey, url }
     }
 

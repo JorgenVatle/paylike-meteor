@@ -20,12 +20,13 @@ export default class PaylikeService {
      * Paylike constructor
      *
      * @param key
+     * @param url
      */
-    public constructor(key: string) {
-        this.api = {
-            key,
-            url: 'https://api.paylike.io'
-        };
+    public constructor(
+        key: string = Helpers.settings.secret,
+        url: string = Helpers.settings.serviceUrl || 'https://api.paylike.io'
+    ) {
+        this.api = { key, url };
     }
 
     /**

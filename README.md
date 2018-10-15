@@ -2,7 +2,7 @@
 [![CircleCI branch](https://img.shields.io/circleci/project/github/JorgenVatle/paylike-meteor/master.svg)](https://circleci.com/gh/JorgenVatle/paylike-meteor)
 [![Atmosphere](https://img.shields.io/badge/atmosphere-jorgenvatle%3Apaylike-blue.svg)](https://atmospherejs.com/jorgenvatle/paylike)
 
-A simple Meteor wrapper for [Paylike](https://paylike.io/)'s API enabling synchronous consumption of their payments API.
+A full-fledged Meteor wrapper for [Paylike](https://paylike.io/)'s API enabling synchronous consumption of their payments API.
 
 ## Installation
 ```bash
@@ -39,7 +39,7 @@ Example output:
 #### [Create app](https://github.com/paylike/api-docs#fetch-current-app)
 This adds an app to the merchant your current API key (app) belongs to.
 ```js
-const newApp = paylike.app.create({
+const newApp = paylike.apps.create({
     name: 'my-new-app' // Optional
 });
 ```

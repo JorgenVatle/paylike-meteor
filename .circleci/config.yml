@@ -25,5 +25,14 @@ jobs:
         - 'node_modules'
 
     - run: echo $METEOR_SETTINGS > settings.json
+    - run: echo $METEOR_SESSION > meteor_session.json
     - run: npm run build
     - run: npm test -- --once
+
+    - deploy:
+        command: |
+          if [[ "$CIRCLE_TAG" =~ ^v.* ]];
+            then
+              rm -rf node_modules
+              METEOR_SESSION_FILE=meteor_session.json meteor publish
+          fi
