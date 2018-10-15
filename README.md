@@ -237,9 +237,9 @@ Pull requests are more than welcome! When adding new features, going through the
 greatly appreciated.
 
 #### Starting the development environment
-Add your Paylike credentials to `settings.json` (See `settings.example.json` for an example)
-
-Use `npm start` to start _both_ the TypeScript build watcher and the test watcher.
+1. Add your Paylike credentials to `settings.json` (See `settings.example.json` for an example)
+2. Use `npm install` to install dependencies.
+3. Use `npm start` to start _both_ the TypeScript build watcher and the test watcher.
 
 #### Alternatively, start watchers individually
 Use `npm test` to start _just_ the test watcher.
