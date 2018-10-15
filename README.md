@@ -24,8 +24,6 @@ Meteor settings file:
 ```json
 {
   "paylike": {
-    "id": "paylike-merchant-or-account-id",
-    "public": "paylike-public-key",
     "private": "paylike-api-key"
   }
 }
