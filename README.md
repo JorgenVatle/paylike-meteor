@@ -16,7 +16,19 @@ The following examples will use the `paylike` constant defined below.
 ```js
 import Paylike from 'meteor/jorgenvatle:paylike';
 
+// API Key optional if you've already got yours defined in your Meteor settings.
 const paylike = new Paylike('your-api-key');
+```
+To not have to pass your API key in with every instantiation of Paylike, use the following settings format for your
+Meteor settings file:
+```json
+{
+  "paylike": {
+    "id": "paylike-merchant-or-account-id",
+    "public": "paylike-public-key",
+    "private": "paylike-api-key"
+  }
+}
 ```
 
 ### [Apps](https://github.com/paylike/api-docs#fetch-current-app)
