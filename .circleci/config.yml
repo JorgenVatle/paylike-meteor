@@ -7,39 +7,32 @@ jobs:
     working_directory: ~/repo
 
     steps:
-      - checkout
+    - checkout
 
-      - restore_cache:
-          name: Restore node_modules
-          key: npm-cache-{{ checksum "package.json" }}
+    - restore_cache:
+        name: Restore node_modules
+        key: npm-cache-{{ checksum "package.json" }}
 
-      ## Install and cache dependencies
-      - run: meteor || curl https://install.meteor.com/ | /bin/sh
-      - run: meteor npm install
+    ## Install and cache dependencies
+    - run: meteor || curl https://install.meteor.com/ | /bin/sh
+    - run: meteor npm install
 
-      - save_cache:
-          name: Save node_modules
-          key: npm-cache-{{ checksum "package.json" }}
-          paths:
-          - '~/.npm'
-          - 'node_modules'
+    - save_cache:
+        name: Save node_modules
+        key: npm-cache-{{ checksum "package.json" }}
+        paths:
+        - '~/.npm'
+        - 'node_modules'
 
-      - run: echo $METEOR_SETTINGS > settings.json
-      - run: npm run build
-      - run: npm test -- --once
+    - run: echo $METEOR_SETTINGS > settings.json
+    - run: echo $METEOR_SESSION > meteor_session.json
+    - run: npm run build
+    - run: npm test -- --once
 
-  publish:
-    working_directory: ~/repo
-
-    steps:
-      - run: echo $METEOR_SESSION > meteor_session.json
-      - deploy:
-          command: |
-            rm -rf node_modules
-            METEOR_SESSION_FILE=meteor_session.json meteor publish
-
-    filters:
-      tags:
-        only: /^v.*/
-    requires:
-      - build
+    - deploy:
+        command: |
+          if [[ "$CIRCLE_TAG" =~ ^v.* ]];
+            then
+              rm -rf node_modules
+              METEOR_SESSION_FILE=meteor_session.json meteor publish
+          fi
