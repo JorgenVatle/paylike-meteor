@@ -31,7 +31,7 @@ jobs:
 
     - deploy:
         command: |
-          if [[ "$CIRCLE_TAG" =~ ^v.* ]];
+          if [[ ${CIRCLE_TAG} =~ ^v.* ]];
             then
               rm -rf node_modules
               METEOR_SESSION_FILE=meteor_session.json meteor publish
