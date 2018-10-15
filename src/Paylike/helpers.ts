@@ -1,3 +1,5 @@
+import { Meteor } from 'meteor/meteor';
+
 export default {
 
     /**
@@ -25,5 +27,12 @@ export default {
      */
     get userAgent() {
         return `Paylike-Meteor v${this.package.version} (https://github.com/JorgenVatle/paylike-meteor)`
+    },
+
+    /**
+     * Paylike settings as found in settings.json
+     */
+    get settings() {
+        return Meteor.settings.paylike || {};
     }
 }
