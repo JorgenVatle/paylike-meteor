@@ -34,3 +34,6 @@ jobs:
         command: |
           rm -rf node_modules
           npm run publish
+        filters:
+          tags:
+            only: /^v.*/
