@@ -20,7 +20,7 @@ import Paylike from 'meteor/jorgenvatle:paylike';
 const paylike = new Paylike('your-api-key');
 ```
 To not have to pass your API key in with every instantiation of Paylike, use the following settings format for your
-Meteor settings file:
+[Meteor settings](https://docs.meteor.com/api/core.html#Meteor-settings):
 ```json
 {
   "paylike": {
