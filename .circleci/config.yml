@@ -33,7 +33,7 @@ jobs:
     - deploy:
         command: |
           rm -rf node_modules
-          npm run publish
+          METEOR_SESSION_FILE=meteor_session.json meteor publish
         filters:
           tags:
             only: /^v.*/
