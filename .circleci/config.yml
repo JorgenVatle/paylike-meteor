@@ -24,6 +24,7 @@ jobs:
         - '~/.npm'
         - 'node_modules'
 
+    - run: sudo npm install -g ci-github-utils
     - run: echo $METEOR_SETTINGS > settings.json
     - run: echo $METEOR_SESSION > meteor_session.json
     - run: npm run build
@@ -31,8 +32,5 @@ jobs:
 
     - deploy:
         command: |
-          if [[ "$CIRCLE_TAG" =~ ^v.* ]];
-            then
-              rm -rf node_modules
-              METEOR_SESSION_FILE=meteor_session.json meteor publish
-          fi
+          chmod +x ./.circleci/publish.sh
+          ./.circleci/publish.sh
