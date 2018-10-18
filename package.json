@@ -1,6 +1,7 @@
 {
   "name": "paylike-meteor",
-  "private": true,
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "start": "start npm run build -- --watch & npm test",
     "test": "meteor test-packages ./ --settings settings.json --driver-package meteortesting:mocha",
