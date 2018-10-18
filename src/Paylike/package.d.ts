@@ -1,5 +1,5 @@
-import Paylike from './Paylike';
-import Gateway from './Paylike/gateway/gateway';
+import Paylike from './';
+import Gateway from './gateway/gateway';
 
 declare module 'meteor/jorgenvatle:paylike' {
     export default Paylike;
