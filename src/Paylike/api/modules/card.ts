@@ -1,6 +1,6 @@
 import PaylikeMerchantCoreData from "../merchant-core-data";
 
-interface PaylikeCardData extends PaylikeApi.cards.card {}
+export interface PaylikeCardData extends PaylikeApi.cards.card {}
 
 interface PaylikeCard extends PaylikeCardData {
     entry: PaylikeCardData,
