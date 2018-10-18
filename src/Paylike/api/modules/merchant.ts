@@ -6,10 +6,10 @@ import PaylikeTransactions from "./transactions";
 import PaylikeFraudAlerts from "./fraud-alerts";
 import PaylikeCards from "./cards";
 
-export interface MerchantData extends PaylikeApi.merchants.merchant {}
+export interface PaylikeMerchantData extends PaylikeApi.merchants.merchant {}
 
-interface PaylikeMerchant extends MerchantData {
-    entry: MerchantData;
+interface PaylikeMerchant extends PaylikeMerchantData {
+    entry: PaylikeMerchantData;
 }
 
 class PaylikeMerchant extends PaylikeCoreData {
@@ -17,7 +17,7 @@ class PaylikeMerchant extends PaylikeCoreData {
     /**
      * PaylikeMerchant data.
      */
-    public entry: MerchantData;
+    public entry: PaylikeMerchantData;
 
     /**
      * Merchant service.
