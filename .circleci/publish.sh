@@ -8,7 +8,7 @@ if [[ "$COMMIT_MESSAGE" =~ ^v[0-9]+\.[0-9]+\.[0-9]+ ]] && [ "$CIRCLE_BRANCH" == 
     METEOR_SESSION_FILE=meteor_session.json meteor publish
 
     # NPM
-    node sync-version.js
+    node ./sync-version.js
     npm publish
 else
  echo "Skipping package publish step"
