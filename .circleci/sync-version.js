@@ -3,7 +3,7 @@ const jsonPath = '../package.json';
 const packageJson = require(jsonPath);
 const packageJs = require('../package.js');
 
-packageJson.version = packageJs.details.version.replace(/v/g, '');
+packageJson.version = packageJs.details.version;
 packageJson.private = false;
 
 fs.writeFile(jsonPath, JSON.stringify(packageJson, null, 2), (err) => {
