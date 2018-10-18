@@ -34,6 +34,8 @@ export default class PaylikeCards extends PaylikeMerchantCorePaginated {
 
     // This module endpoint does not have any pagination functionality.
     // So we set the inherited pagination method types to undefined to prevent any confusion.
+    // @ts-ignore
     public fetch: undefined;
+    // @ts-ignore
     protected _fetch: undefined;
 }
