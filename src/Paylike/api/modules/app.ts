@@ -1,6 +1,6 @@
 import PaylikeCoreData from "../core-data";
 
-interface PaylikeAppData extends PaylikeApi.apps.app {}
+export interface PaylikeAppData extends PaylikeApi.apps.app {}
 
 interface PaylikeApp extends PaylikeAppData {
     entry: PaylikeAppData;
