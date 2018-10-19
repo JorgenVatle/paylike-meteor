@@ -5,7 +5,7 @@ const jsPath = __dirname + '/../package.js';
 const packageJson = require(jsonPath);
 
 const rawJs = fs.readFileSync(jsPath, 'utf8')
-    .replace(/version: '\d+\.\d+\.\d+'/, `version: '${packageJson.version}'`);
+    .replace(/"*'*version"*'*\s*:\s*[\"|\'\`]\d+\.\d+\.\d+[\"|\'\`]/, `version: '${packageJson.version}'`);
 
 fs.writeFile(jsPath, rawJs, (err) => {
     if (err) throw err;
