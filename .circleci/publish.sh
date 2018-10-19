@@ -13,5 +13,3 @@ if [[ "$COMMIT_MESSAGE" =~ ^v*[0-9]+\.[0-9]+\.[0-9]+$ ]] && [ "$CIRCLE_BRANCH" =
 else
  echo "Skipping package publish step"
 fi
-
-echo $COMMIT_MESSAGE
