@@ -1,4 +1,4 @@
-import CurrencyCode = PaylikeApi.CurrencyCode;
+import { PaylikeApi } from "../api";
 
 /**
  * Gateway transactions
@@ -28,6 +28,8 @@ declare module PaylikeGatewayApi {
      */
     module payment {
         module create {
+            import CurrencyCode = PaylikeApi.CurrencyCode;
+
             interface input {
                 currency: CurrencyCode,
                 amount: number,
