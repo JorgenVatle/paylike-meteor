@@ -1,4 +1,4 @@
-declare module PaylikeApi {
+export module PaylikeApi {
     type CurrencyCode = 'USD' | 'EUR' | 'GBP' | 'AUD' | 'CAD' | string
 
     /**

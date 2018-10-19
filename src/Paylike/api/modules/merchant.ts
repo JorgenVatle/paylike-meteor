@@ -5,6 +5,7 @@ import PaylikeApps from "./apps";
 import PaylikeTransactions from "./transactions";
 import PaylikeFraudAlerts from "./fraud-alerts";
 import PaylikeCards from "./cards";
+import { PaylikeApi } from "../index";
 
 export interface PaylikeMerchantData extends PaylikeApi.merchants.merchant {}
 
