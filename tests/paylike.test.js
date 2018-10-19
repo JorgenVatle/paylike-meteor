@@ -1,10 +1,9 @@
-import { Meteor } from 'meteor/meteor';
 import { expect, assert } from 'chai';
 import Paylike, { PaylikeGateway } from "../dist";
 
 const testData = JSON.parse(Assets.getText('tests/data.json'));
-const paylike = new Paylike(Meteor.settings.paylike.secret);
-const gateway = new PaylikeGateway(Meteor.settings.paylike.public);
+const paylike = new Paylike();
+const gateway = new PaylikeGateway();
 
 describe('Paylike', function() {
     const merchant = paylike.merchants.current;
