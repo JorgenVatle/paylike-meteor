@@ -6,7 +6,7 @@ var Package = Package || {
 var module = module || {};
 var details = {
     name: 'jorgenvatle:paylike',
-    version: '1.2.0',
+    version: '1.2.1',
     summary: 'Meteor HTTP wrapper for PayLike\'s REST API',
     git: 'https://github.com/JorgenVatle/paylike-meteor.git',
     documentation: 'README.md'
