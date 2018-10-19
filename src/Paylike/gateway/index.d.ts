@@ -5,7 +5,7 @@ import { PaylikeApi } from "../api";
  *
  * @link https://github.com/paylike/api-docs/blob/master/gateway.md#create-a-payment
  */
-declare module PaylikeGatewayApi {
+export module PaylikeGatewayApi {
 
     interface card {
         number: number,
