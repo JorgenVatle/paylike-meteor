@@ -1,7 +1,8 @@
 const fs = require('fs');
+const packageJs = require('../package.js');
+
 const jsonPath = __dirname + '/../package.json';
 const packageJson = require(jsonPath);
-const packageJs = require('../package.js');
 
 packageJson.version = packageJs.details.version;
 packageJson.private = false;
