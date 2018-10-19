@@ -1,5 +1,5 @@
 const fs = require('fs');
-const jsonPath = '../package.json';
+const jsonPath = __dirname + '/../package.json';
 const packageJson = require(jsonPath);
 const packageJs = require('../package.js');
 
