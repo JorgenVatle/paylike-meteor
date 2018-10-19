@@ -8,7 +8,9 @@
     "start": "start npm run build -- --watch & npm test",
     "test": "meteor test-packages ./ --settings settings.json --driver-package meteortesting:mocha",
     "build": "tsc",
-    "publish": "meteor publish"
+    "publish": "meteor publish",
+    "preversion": "git pull && npm build && npm test",
+    "postversion": "git push && git push --tags"
   },
   "repository": {
     "type": "git",
