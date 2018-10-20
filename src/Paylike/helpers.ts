@@ -33,6 +33,13 @@ export default {
      * Paylike settings as found in settings.json
      */
     get settings() {
-        return Meteor.settings.paylike || {};
+        const mSettings = Meteor.settings;
+        const settings = mSettings.paylike || {};
+
+        if (mSettings.public && mSettings.public.paylike) {
+            settings.public = mSettings.public.paylike.key;
+        }
+
+        return settings;
     }
 }
