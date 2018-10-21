@@ -7,7 +7,7 @@ import { PaylikeApi } from "../api/PaylikeApi";
  */
 export module PaylikeGatewayApi {
 
-    interface card {
+    export interface card {
         number: number,
         core: number,
         expiry: {
@@ -16,7 +16,7 @@ export module PaylikeGatewayApi {
         }
     }
 
-    interface error {
+    export interface error {
         code: number,
         message: string,
         client: boolean,
@@ -26,23 +26,23 @@ export module PaylikeGatewayApi {
     /**
      * Gateway Payments
      */
-    module payment {
-        module create {
+    export module payment {
+        export module create {
             import CurrencyCode = PaylikeApi.CurrencyCode;
 
-            interface input {
+            export interface input {
                 currency: CurrencyCode,
                 amount: number,
                 card: card,
             }
 
-            interface response {
+            export interface response {
                 transaction: {
                     id: string,
                 }
             }
 
-            interface errorResponse extends error {
+            export interface errorResponse extends error {
                 response: response,
             }
         }
@@ -51,17 +51,17 @@ export module PaylikeGatewayApi {
     /**
      * Gateway cards
      */
-    module card {
-        module tokenize {
-            type input = card;
+    export module card {
+        export module tokenize {
+            export type input = card;
 
-            interface response {
+            export interface response {
                 card: {
                     id: string,
                 }
             }
 
-            interface errorResponse extends error {
+            export interface errorResponse extends error {
                 response: response,
             }
         }

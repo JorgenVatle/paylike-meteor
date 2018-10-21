@@ -2,7 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { HTTP } from "meteor/http";
 import { HttpMethod } from "../api/service";
 import Helpers from "../helpers";
-import { PaylikeGatewayApi } from "./index";
+import { PaylikeGatewayApi } from "./PaylikeGatewayApi";
 
 export default class PaylikeGateway {
 
