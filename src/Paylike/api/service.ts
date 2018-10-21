@@ -3,6 +3,7 @@ import PaylikeMerchants from "./modules/merchants";
 import Helpers from '../helpers';
 import PaylikeCurrentApp from "./modules/current-app";
 import PaylikeApp from "./modules/app";
+import PaylikeMerchant from "./modules/merchant";
 
 export type HttpMethod = 'GET' | 'HEAD' | 'POST' | 'PUT' | 'DELETE' | 'TRACE' | 'OPTIONS' | 'CONNECT' | 'PATCH';
 
@@ -76,6 +77,13 @@ export default class PaylikeService {
      */
     public get me(): PaylikeApp {
         return this.app.me;
+    }
+
+    /**
+     * Fetch the current merchant.
+     */
+    public get merchant(): PaylikeMerchant {
+        return this.merchants.current;
     }
 
     /**
