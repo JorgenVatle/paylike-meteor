@@ -154,12 +154,16 @@ describe('Paylike', function() {
             notes: 'paylike.test.js'
         });
 
+        let transaction;
+
         expect(() => {
-            card.reserve({
+            transaction = card.reserve({
                 currency: 'USD',
                 amount: 12.55,
             });
         }).to.not.throw('Paylike');
+
+        expect(transaction.id).to.not.be.undefined;
     });
 });
 
