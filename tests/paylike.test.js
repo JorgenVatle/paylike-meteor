@@ -154,10 +154,12 @@ describe('Paylike', function() {
             notes: 'paylike.test.js'
         });
 
-        card.reserve({
-            currency: 'USD',
-            amount: 12.55,
-        });
+        expect(() => {
+            card.reserve({
+                currency: 'USD',
+                amount: 12.55,
+            });
+        }).to.not.throw('Paylike');
     });
 });
 
