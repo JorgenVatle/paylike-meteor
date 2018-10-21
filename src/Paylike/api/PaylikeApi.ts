@@ -1,14 +1,14 @@
 export module PaylikeApi {
-    type CurrencyCode = 'USD' | 'EUR' | 'GBP' | 'AUD' | 'CAD' | string
+    export type CurrencyCode = 'USD' | 'EUR' | 'GBP' | 'AUD' | 'CAD' | string
 
     /**
      * Merchants
      *
      * @link https://github.com/paylike/api-docs#merchants
      */
-    module merchants {
+    export module merchants {
 
-        interface merchant extends create.input{
+        export interface merchant extends create.input{
             id: string,
             key: string,
         }
@@ -16,8 +16,8 @@ export module PaylikeApi {
         /**
          * Create a merchant
          */
-        module create {
-            interface input {
+        export module create {
+            export interface input {
                 name?: string,
                 test?: boolean,
 
@@ -34,7 +34,7 @@ export module PaylikeApi {
                 }
             }
 
-            interface response {
+            export interface response {
                 merchant: merchant
             }
         }
@@ -42,21 +42,21 @@ export module PaylikeApi {
         /**
          * Update a merchant
          */
-        module update {
-            interface input {
+        export module update {
+            export interface input {
                 name?: string,
                 email?: string,
                 descriptor?: string,
             }
 
-            type response = void;
+            export type response = void;
         }
 
         /**
          * Single merchant
          */
-        module merchant {
-            interface get extends merchants.create.response {}
+        export module merchant {
+            export interface get extends merchants.create.response {}
         }
     }
 
@@ -65,28 +65,28 @@ export module PaylikeApi {
      *
      * @link https://github.com/paylike/api-docs#apps
      */
-    module apps {
-        interface identity {
+    export module apps {
+        export interface identity {
             id: string,
             name?: string,
             created?: string,
         }
 
-        interface app extends identity { key?: string }
+        export interface app extends identity { key?: string }
 
         /**
          * Create an app
          */
-        module create {
-            interface input { name?: string }
-            interface response { app: app }
+        export module create {
+            export interface input { name?: string }
+            export interface response { app: app }
         }
 
         /**
          * Fetch the current app
          */
-        module me {
-            interface response { identity: identity }
+        export module me {
+            export interface response { identity: identity }
         }
     }
 
@@ -95,8 +95,8 @@ export module PaylikeApi {
      *
      * @link https://github.com/paylike/api-docs#merchants-users
      */
-    module users {
-        interface user {
+    export module users {
+        export interface user {
             id: string,
             email: string,
             name?: string,
@@ -105,12 +105,12 @@ export module PaylikeApi {
         /**
          * Invite a user
          */
-        module invite {
-            interface input {
+        export module invite {
+            export interface input {
                 email: string,
             }
 
-            interface response {
+            export interface response {
                 isMember: boolean
             }
         }
@@ -118,8 +118,8 @@ export module PaylikeApi {
         /**
          * Revoke a user
          */
-        module revoke {
-            type response = void;
+        export module revoke {
+            export type response = void;
         }
     }
 
@@ -128,8 +128,8 @@ export module PaylikeApi {
      *
      * @link https://github.com/paylike/api-docs#transactions
      */
-    module transactions {
-        interface card {
+    export module transactions {
+        export interface card {
             bin: string,
             expiry: string,
             last4: string,
@@ -139,7 +139,7 @@ export module PaylikeApi {
             },
         }
 
-        interface trail {
+        export interface trail {
             lineId: string,
             amount: number,
             balance: number,
@@ -152,7 +152,7 @@ export module PaylikeApi {
             }
         }
 
-        interface transaction {
+        export interface transaction {
             id: string,
             amount: number,
             merchantId: string,
@@ -179,25 +179,25 @@ export module PaylikeApi {
          *
          * @link https://github.com/paylike/api-docs#create-a-transaction
          */
-        module create {
-            interface inputData {
+        export module create {
+            export interface inputData {
                 descriptor?: string,
                 currency: string,
                 amount: number,
                 custom: any,
             }
 
-            interface usingCard extends inputData {
+            export interface usingCard extends inputData {
                 cardId: string,
             }
 
-            interface usingTransaction extends inputData {
+            export interface usingTransaction extends inputData {
                 transactionId: string,
             }
 
-            type input = usingCard | usingTransaction;
+            export type input = usingCard | usingTransaction;
 
-            interface response {
+            export interface response {
                 transaction: {
                     id: string,
                 }
@@ -209,11 +209,11 @@ export module PaylikeApi {
          *
          * @link https://github.com/paylike/api-docs#void-a-transaction
          */
-        module transactionVoid {
-            interface input {
+        export module transactionVoid {
+            export interface input {
                 amount: number,
             }
-            type response = void;
+            export type response = void;
         }
 
         /**
@@ -221,12 +221,12 @@ export module PaylikeApi {
          *
          * @link https://github.com/paylike/api-docs#refund-a-transaction
          */
-        module refund {
-            interface input {
+        export module refund {
+            export interface input {
                 amount: number,
                 descriptor?: string,
             }
-            type response = void;
+            export type response = void;
         }
 
         /**
@@ -234,13 +234,13 @@ export module PaylikeApi {
          *
          * @link https://github.com/paylike/api-docs#capture-a-transaction
          */
-        module capture {
-            interface input {
+        export module capture {
+            export interface input {
                 amount: number,
                 currency?: CurrencyCode,
                 descriptor?: string,
             }
-            type response = void;
+            export type response = void;
         }
     }
 
@@ -249,9 +249,9 @@ export module PaylikeApi {
      *
      * @link https://github.com/paylike/api-docs#cards
      */
-    module cards {
+    export module cards {
 
-        interface card {
+        export interface card {
             id: string,
             merchantId: string,
             created: string,
@@ -266,12 +266,12 @@ export module PaylikeApi {
          *
          * @link https://github.com/paylike/api-docs#save-a-card
          */
-        module save {
-            interface input {
+        export module save {
+            export interface input {
                 transactionId: string,
                 notes?: string,
             }
-            interface response {
+            export interface response {
                 card: {
                     id: string,
                 }
@@ -285,9 +285,9 @@ export module PaylikeApi {
      *
      * @link https://github.com/paylike/api-docs#fraud-alerts
      */
-    module fraud {
+    export module fraud {
 
-        interface fraud {
+        export interface fraud {
             id: string,
             merchantId: string,
             transactionId: string,
@@ -296,17 +296,17 @@ export module PaylikeApi {
             reason: number | undefined,
         }
 
-        interface get {
+        export interface get {
             fraud: fraud,
         }
 
-        type fetch = Array<fraud>
+        export type fetch = Array<fraud>
     }
 
     /**
      * Query parameters for pagination requests.
      */
-    interface PaginationQuery {
+    export interface PaginationQuery {
         limit: string | number,
         before?: string,
         after?: string,
@@ -315,7 +315,7 @@ export module PaylikeApi {
     /**
      * Query parameters for fraud pagination requests.
      */
-    interface FraudPaginationQuery extends PaginationQuery {
+    export interface FraudPaginationQuery extends PaginationQuery {
         filter: {
             merchantId: string,
             transactionId?: string,
