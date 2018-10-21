@@ -9,6 +9,9 @@ interface PaylikeCard extends PaylikeCardData {
 
 class PaylikeCard extends PaylikeMerchantCoreData {
 
+    /**
+     * Paylike API URI for the current card.
+     */
     public get path() {
         return `/cards/${this.id}`
     }
