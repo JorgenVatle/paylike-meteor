@@ -142,7 +142,7 @@ describe('Paylike', function() {
         expect(merchant.cards.find(card.id).scheme).to.not.be.undefined;
     });
 
-    it('can create a charge on a card instance', function() {
+    it('can create reserve funds on a card', function() {
         const authorization = gateway.createPayment({
             currency: "USD",
             amount: 1337,
@@ -154,7 +154,7 @@ describe('Paylike', function() {
             notes: 'paylike.test.js'
         });
 
-        card.charge({
+        card.reserve({
             currency: 'USD',
             amount: 12.55,
         });

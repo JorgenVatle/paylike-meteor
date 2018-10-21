@@ -213,9 +213,9 @@ const card = myMerchant.cards.save({
 const card = myMerchant.cards.find('card-id-goes-here');
 ```
 
-#### [Charge a card](https://github.com/paylike/api-docs#cards)
+#### [Create a transaction from card](https://github.com/paylike/api-docs#cards)
 ```js
-card.charge({
+card.reserve({
     currency: 'EUR',            // required - Currency
     amount: 1337,               // required - Amount of funds to reserve.
     descriptor: 'test-payment', // optional - Descriptor to show up on bank statement 

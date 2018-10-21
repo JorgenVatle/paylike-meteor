@@ -17,11 +17,11 @@ class PaylikeCard extends PaylikeMerchantCoreData {
     }
 
     /**
-     * Add a charge to the current card.
+     * Reserve funds on the current card.
      *
      * @param details
      */
-    charge(details: PaylikeApi.transactions.create.inputData) {
+    reserve(details: PaylikeApi.transactions.create.inputData) {
         const usingCard = {...details, cardId: this.id};
         this.merchant.transactions.create(usingCard);
     }
