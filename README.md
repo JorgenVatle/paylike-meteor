@@ -61,7 +61,7 @@ includes inviting and removing users.
 
 #### [Current merchant](https://github.com/paylike/api-docs#fetch-all-merchants)
 ```js
-const merchant = paylike.merchants.current;
+const merchant = paylike.merchant;
 
 console.log(merchant.name) // "My Online Shop"
 ```
