@@ -141,6 +141,24 @@ describe('Paylike', function() {
 
         expect(merchant.cards.find(card.id).scheme).to.not.be.undefined;
     });
+
+    it('can create a charge on a card instance', function() {
+        const authorization = gateway.createPayment({
+            currency: "USD",
+            amount: 1337,
+            card: testData.card.valid,
+        });
+
+        const card = merchant.cards.save({
+            transactionId: merchant.transactions.find(authorization.id).id,
+            notes: 'paylike.test.js'
+        });
+
+        card.charge({
+            currency: 'USD',
+            amount: 12.55,
+        });
+    });
 });
 
 describe('Paylike Gateway', function() {
