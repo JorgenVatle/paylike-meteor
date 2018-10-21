@@ -17,6 +17,10 @@ describe('Paylike', function() {
         expect(merchant.id).to.not.be.undefined;
     });
 
+    it('should fetch the current merchant', function() {
+        expect(paylike.merchant.id).to.not.be.undefined;
+    });
+
     it('should fetch a list of users', function() {
         assert.isAtLeast(merchant.users.fetch().length, 1);
     });
