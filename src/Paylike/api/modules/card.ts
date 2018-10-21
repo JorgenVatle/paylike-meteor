@@ -1,5 +1,6 @@
 import PaylikeMerchantCoreData from "../merchant-core-data";
 import { PaylikeApi } from "../PaylikeApi";
+import PaylikeTransaction from "./transaction";
 
 export interface PaylikeCardData extends PaylikeApi.cards.card {}
 
@@ -21,9 +22,9 @@ class PaylikeCard extends PaylikeMerchantCoreData {
      *
      * @param details
      */
-    reserve(details: PaylikeApi.transactions.create.inputData) {
+    reserve(details: PaylikeApi.transactions.create.inputData): PaylikeTransaction {
         const usingCard = {...details, cardId: this.id};
-        this.merchant.transactions.create(usingCard);
+        return this.merchant.transactions.create(usingCard);
     }
 
 }
