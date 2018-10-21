@@ -1,6 +1,6 @@
 import PaylikeFraudAlert from "./fraud-alert";
 import PaylikeMerchantCorePaginated from "../merchant-core-paginated";
-import { PaylikeApi } from "../index";
+import { PaylikeApi } from "../PaylikeApi";
 
 interface FraudPaginationQuery extends PaylikeApi.PaginationQuery {
     filter?: PaylikeApi.FraudPaginationQuery['filter'];

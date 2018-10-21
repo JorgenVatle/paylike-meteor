@@ -1,6 +1,6 @@
 import PaylikeApp from "./app";
 import PaylikeCore from "../core";
-import { PaylikeApi } from "../index";
+import { PaylikeApi } from "../PaylikeApi";
 
 export default class PaylikeCurrentApp extends PaylikeCore {
 

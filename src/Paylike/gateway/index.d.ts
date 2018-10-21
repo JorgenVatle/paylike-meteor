@@ -1,4 +1,4 @@
-import { PaylikeApi } from "../api";
+import { PaylikeApi } from "../api/PaylikeApi";
 
 /**
  * Gateway transactions

@@ -1,5 +1,5 @@
 import PaylikeCoreData from "../core-data";
-import { PaylikeApi } from "../index";
+import { PaylikeApi } from "../PaylikeApi";
 
 export interface PaylikeFraudAlertData extends PaylikeApi.fraud.fraud {}
 

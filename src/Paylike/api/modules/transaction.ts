@@ -1,5 +1,5 @@
 import PaylikeMerchantCoreData from "../merchant-core-data";
-import { PaylikeApi } from "../index";
+import { PaylikeApi } from "../PaylikeApi";
 
 interface TransactionData extends PaylikeApi.transactions.transaction {}
 

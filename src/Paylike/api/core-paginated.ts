@@ -1,5 +1,5 @@
 import PaylikeCore, { CoreDataInstance } from "./core";
-import { PaylikeApi } from "./index";
+import { PaylikeApi } from "./PaylikeApi";
 
 export default abstract class PaylikeCorePaginated extends PaylikeCore {
 

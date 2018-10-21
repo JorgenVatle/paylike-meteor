@@ -1,7 +1,7 @@
 import PaylikeMerchant from "./merchant";
 import PaylikeCorePaginated from "../core-paginated";
 import PaylikeApp from "./app";
-import { PaylikeApi } from "../index";
+import { PaylikeApi } from "../PaylikeApi";
 
 export default class PaylikeMerchants extends PaylikeCorePaginated {
 
