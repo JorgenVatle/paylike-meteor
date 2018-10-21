@@ -156,7 +156,7 @@ describe('Paylike', function() {
 
         let transaction = card.reserve({
             currency: 'USD',
-            amount: 12.55,
+            amount: 1255,
         });
 
         expect(transaction.id).to.not.be.undefined;
