@@ -213,7 +213,7 @@ const card = myMerchant.cards.save({
 const card = myMerchant.cards.find('card-id-goes-here');
 ```
 
-#### [Create a transaction from card](https://github.com/paylike/api-docs#cards)
+#### [Create a transaction from card](https://github.com/paylike/api-docs#create-a-transaction)
 ```js
 const transaction = card.reserve({
     currency: 'EUR',            // required - Currency
