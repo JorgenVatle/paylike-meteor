@@ -184,7 +184,7 @@ export module PaylikeApi {
                 descriptor?: string,
                 currency: string,
                 amount: number,
-                custom: any,
+                custom?: any,
             }
 
             export interface usingCard extends inputData {
