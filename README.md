@@ -17,7 +17,7 @@ The following examples will use the `paylike` constant defined below.
 import Paylike from 'meteor/jorgenvatle:paylike';
 
 // Passing your API key here is optional if you've got your API key defined in your Meteor Settings.
-const paylike = new Paylike('your-api-key');
+const paylike = new Paylike('paylike-api-key');
 ```
 [Meteor settings](https://docs.meteor.com/api/core.html#Meteor-settings) format:
 ```json
