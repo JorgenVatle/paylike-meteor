@@ -34,6 +34,7 @@ export module PaylikeGatewayApi {
                 currency: CurrencyCode,
                 amount: number,
                 card: card,
+                custom: any,
             }
 
             export interface response {
