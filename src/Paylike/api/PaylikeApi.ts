@@ -160,7 +160,7 @@ export module PaylikeApi {
             card: card,
             created: string,
             currency: CurrencyCode,
-            custom: string | null,
+            custom: any,
             descriptor: string,
             disputedAmount: number,
             error: boolean,
