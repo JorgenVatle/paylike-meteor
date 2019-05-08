@@ -4,6 +4,8 @@ import Helpers from '../helpers';
 import PaylikeCurrentApp from "./modules/current-app";
 import PaylikeApp from "./modules/app";
 import PaylikeMerchant from "./modules/merchant";
+import { PaylikeApi } from './PaylikeApi';
+import processingError = PaylikeApi.transactions.processingError;
 
 export type HttpMethod = 'GET' | 'HEAD' | 'POST' | 'PUT' | 'DELETE' | 'TRACE' | 'OPTIONS' | 'CONNECT' | 'PATCH';
 
@@ -50,7 +52,7 @@ export default class PaylikeService {
         return new Meteor.Error(
             'paylike-exception',
             message,
-            (metadata && metadata.response && metadata.response.data) || metadata
+            <processingError>(metadata && metadata.response && metadata.response.data) || metadata
         );
     }
 
