@@ -175,6 +175,18 @@ export module PaylikeApi {
         }
 
         /**
+         * Transaction processing error
+         *
+         * @link https://github.com/paylike/processing-errors
+         */
+        export interface processingError {
+            code: number,
+            message: string,
+            client: boolean,
+            merchant: boolean,
+        }
+
+        /**
          * Create a transaction
          *
          * @link https://github.com/paylike/api-docs#create-a-transaction
